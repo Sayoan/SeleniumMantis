@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumUteis;
@@ -45,8 +46,17 @@ namespace ProjetoSomar.SeleniumPageObjects
         [FindsBy(How = How.Name, Using = "handler_id")]
         public IWebElement cbAssign { get; set; }
 
-        
+        [FindsBy(How = How.Name, Using = "reproducibility")]
+        public IWebElement cbReproducibility { get; set; }
 
+        [FindsBy(How = How.Name, Using = "username")]
+        public IWebElement tfUsername { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "(//input[@value='Add'])[2]")]
+        public IWebElement btAdd { get; set; }
+
+        
+        
 
         public void AlterarStatus(String status)
         {
@@ -62,6 +72,36 @@ namespace ProjetoSomar.SeleniumPageObjects
                 //revisar funcao do combobox
                 Maps.CBClick(cbStatus, status, ""); 
                
+
+
+            }
+            catch (Exception e)
+            {
+
+
+
+
+            }
+
+
+        }
+
+        public void InserirMonitor(String monitor)
+        {
+
+            
+
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            SeleniumMaps Maps = new SeleniumMaps();
+            String ID = "";
+
+            try
+            {
+
+                Maps.PreencherCampo(tfUsername, monitor, "");
+                Maps.ClicarBotao(btAdd);
+                Assert.AreEqual(monitor, _driver.FindElement(By.LinkText(monitor)).Text);
+
 
 
             }
@@ -146,7 +186,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             {
                 //Maps.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.PreencherCampo(tfBugNote,"",nota);
+                Maps.PreencherCampo(tfBugNote, "", nota);
 
 
 
@@ -158,11 +198,36 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             }
-
-
-
-
         }
+            public void AlterarReprodutibilidade(String reprodutibilidade)
+            {
+
+
+                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+                SeleniumMaps Maps = new SeleniumMaps();
+                String ID = "";
+
+                try
+                {
+                //Maps.CBClick(cbStatus, "status", status); 
+                //revisar funcao do combobox
+                Maps.CBClick(cbReproducibility, reprodutibilidade, "");
+
+
+
+                }
+                catch (Exception e)
+                {
+
+
+
+
+                }
+
+
+
+
+            }
 
         public void AtribuirTarefa(String usuario)
         {

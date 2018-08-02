@@ -215,6 +215,94 @@ namespace ProjetoSomar.SeleniumTests
 
         [Test]
         [Category("Doing")]
+        public void Issue_InsertIssuee_FecharTarefaSemReproducao()
+        {
+            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
+            LoginPageObjects loginPageObjects = new LoginPageObjects();
+            HomePageObjects homePageObjects = new HomePageObjects();
+            UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
+            //DataDriven dataDriven = new DataDriven();
+
+            loginPageObjects.Login();
+            homePageObjects.VerificarAcessaLogin();
+
+            homePageObjects.VerificaProjeto();
+            homePageObjects.AcessarAbaReportIssue();
+
+            reportIssuesPageObjects.VerificarAcessaReportIssue();
+            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
+            reportIssuesPageObjects.AcessarEdicaoIssue(summary);
+
+            /*
+             * feedback acknowledged confirmed assigned resolved closed
+             * 
+             */
+            updateIssuePageObjects.AlterarReprodutibilidade("unable to reproduce");
+            updateIssuePageObjects.AtribuirNota("Impossível de reproduzir.");
+            updateIssuePageObjects.AlterarStatus("closed");
+            updateIssuePageObjects.Atualizar();
+        }
+
+
+        [Test]
+        [Category("Impedimento da Edicao")]
+        public void Issue_InsertIssuee_MonitorarBug()
+        {
+            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
+            LoginPageObjects loginPageObjects = new LoginPageObjects();
+            HomePageObjects homePageObjects = new HomePageObjects();
+            UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
+            //DataDriven dataDriven = new DataDriven();
+
+            loginPageObjects.Login();
+            homePageObjects.VerificarAcessaLogin();
+
+            homePageObjects.VerificaProjeto();
+            homePageObjects.AcessarAbaReportIssue();
+
+            reportIssuesPageObjects.VerificarAcessaReportIssue();
+            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
+            reportIssuesPageObjects.AcessarEdicaoIssue(summary);
+
+            /*
+             * feedback acknowledged confirmed assigned resolved closed
+             * 
+             */
+            updateIssuePageObjects.InserirMonitor("sayoan.oliveira");
+            updateIssuePageObjects.Atualizar();
+        }
+
+        [Test]
+        [Category("Impedimento da Edicao")]
+        public void Issue_InsertIssuee_MonitorarBug_UsuárioInexistente()
+        {
+            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
+            LoginPageObjects loginPageObjects = new LoginPageObjects();
+            HomePageObjects homePageObjects = new HomePageObjects();
+            UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
+            //DataDriven dataDriven = new DataDriven();
+
+            loginPageObjects.Login();
+            homePageObjects.VerificarAcessaLogin();
+
+            homePageObjects.VerificaProjeto();
+            homePageObjects.AcessarAbaReportIssue();
+
+            reportIssuesPageObjects.VerificarAcessaReportIssue();
+            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
+            reportIssuesPageObjects.AcessarEdicaoIssue(summary);
+
+            /*
+             * feedback acknowledged confirmed assigned resolved closed
+             * 
+             */
+
+          
+            updateIssuePageObjects.Atualizar();
+        }
+
+        [Test]
+        [Category("Doing")]
         public void Issue_InsertIssuee_AlterarPriority()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
