@@ -1,0 +1,20 @@
+[All Projects] TesteSayoan,	always,	feature,	none,	TESTE_SUMMARY1,	TESTE_DESCRIPTION1,	S
+[All Projects] TesteSayoan,	sometimes,	feature,	none,	TESTE_SUMMARY2,	TESTE_DESCRIPTION2,	S
+[All Projects] TesteSayoan,	random,	feature,	none,	TESTE_SUMMARY3,	TESTE_DESCRIPTION3,	S
+[All Projects] TesteSayoan,	have not tried,	feature,	none,	TESTE_SUMMARY4,	TESTE_DESCRIPTION4,	S
+[All Projects] TesteSayoan,	unable to reproduce,	feature,	none,	TESTE_SUMMARY5,	TESTE_DESCRIPTION5,	S
+[All Projects] TesteSayoan,	N/A,	feature,	none,	TESTE_SUMMARY6,	TESTE_DESCRIPTION6,	S
+[All Projects] TesteSayoan,	always,	feature,	none,	TESTE_SUMMARY7,	TESTE_DESCRIPTION7,	S
+[All Projects] TesteSayoan,	sometimes,	trivial,	none,	TESTE_SUMMARY8,	TESTE_DESCRIPTION8,	S
+[All Projects] TesteSayoan,	random,	text,	none,	TESTE_SUMMARY9,	TESTE_DESCRIPTION9,	S
+[All Projects] TesteSayoan,	have not tried,	tweak,	none,	TESTE_SUMMARY10,	TESTE_DESCRIPTION10,	S
+[All Projects] TesteSayoan,	unable to reproduce,	minor,	none,	TESTE_SUMMARY11,	TESTE_DESCRIPTION11,	S
+[All Projects] TesteSayoan,	N/A,	major,	none,	TESTE_SUMMARY12,	TESTE_DESCRIPTION12,	S
+[All Projects] TesteSayoan,	always,	crash,	low,	TESTE_SUMMARY13,	TESTE_DESCRIPTION13,	S
+[All Projects] TesteSayoan,	sometimes,	block,	low,	TESTE_SUMMARY14,	TESTE_DESCRIPTION14,	S
+[All Projects] TesteSayoan,	random,	text,	none,	TESTE_SUMMARY15,	TESTE_DESCRIPTION15,	S
+[All Projects] TesteSayoan,	have not tried,	tweak,	low,	TESTE_SUMMARY16,	TESTE_DESCRIPTION16,	S
+[All Projects] TesteSayoan,	unable to reproduce,	minor,	normal,	TESTE_SUMMARY17,	TESTE_DESCRIPTION17,	S
+[All Projects] TesteSayoan,	N/A,	major,	high,	TESTE_SUMMARY18,	TESTE_DESCRIPTION18,	S
+[All Projects] TesteSayoan,	always,	feature,	urgent,	TESTE_SUMMARY19,	TESTE_DESCRIPTION19,	S
+[All Projects] TesteSayoan,	sometimes,	feature,	immediate,	TESTE_SUMMARY20,	TESTE_DESCRIPTION20,	S
