@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Test
@@ -97,7 +98,7 @@ namespace Test
             PageFactory.InitElements(WebDriver._driver, this);
         }
 
-
+       
 
 
         public void VerificarAcessaReportIssue()
@@ -113,6 +114,27 @@ namespace Test
             {
                 //NUnit.Framework.Assert.AreEqual("Report Issue", _driver.FindElement(By.LinkText("Report Issue")).Text);
                 Maps.VerificarItem(homePageObjects.ltReportIssue, "Report Issue", "");
+            }
+            catch (Exception e)
+            {
+                NUnit.Framework.Assert.Fail(e.ToString());
+            }
+
+        }
+        public void VerificarDefaultProfile(String conteudo)
+        {
+
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            SeleniumMaps Maps = new SeleniumMaps();
+            HomePageObjects homePageObjects = new HomePageObjects();
+            //veriricar espera
+
+            //método try catch para validar se foi possível acessar a tela inicial
+            try
+            {
+                
+                Maps.CBClick(cbProfile, "", conteudo);
+                Thread.Sleep(3000);
             }
             catch (Exception e)
             {

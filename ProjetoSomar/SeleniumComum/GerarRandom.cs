@@ -9,7 +9,7 @@ namespace ProjetoSomar.SeleniumComum
     class GerarRandom 
     {
 
-        public  string RandomString()
+        public string RandomString()
         {
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var numbers = "0123456789";

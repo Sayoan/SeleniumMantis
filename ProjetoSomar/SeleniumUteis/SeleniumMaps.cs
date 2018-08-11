@@ -92,6 +92,31 @@ namespace ProjetoSomar.SeleniumUteis
 
         }
 
+        public void CBClick_ElementoAusente(IWebElement iwebelement, String label, String text)
+        {
+            try
+            {
+                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+
+
+                iwebelement.Click();
+                new SelectElement(iwebelement).SelectByText(text);
+                iwebelement.Click();
+
+                Assert.Fail();
+
+
+
+            }
+            catch 
+            {
+                Assert.IsTrue(true);
+            }
+
+
+        }
+
 
         public void VerificarItem(IWebElement iwebelement, string text, string label)
         {

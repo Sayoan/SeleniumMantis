@@ -26,6 +26,11 @@ namespace Test
         [FindsBy(How = How.LinkText, Using = "Report Issue")]
         public IWebElement ltIssue { get; set; }
 
+        internal void EscolherProjeto(object projeto)
+        {
+            throw new NotImplementedException();
+        }
+
         [FindsBy(How = How.LinkText, Using = "My View")]
         public IWebElement ltMyView { get; set; }
 

@@ -80,7 +80,9 @@
     <Compile Include="SeleniumTests\HomePageTests.cs" />
     <Compile Include="SeleniumTests\IssueTests.cs" />
     <Compile Include="SeleniumTests\LoginTests.cs" />
-    <Compile Include="SeleniumTests\Logout.cs" />
+    <Compile Include="SeleniumTests\LogoutTests.cs" />
+    <Compile Include="SeleniumTests\ManageTests.cs" />
+    <Compile Include="SeleniumTests\MyAccountTests.cs" />
     <Compile Include="SeleniumTests\ViewIssuesTests.cs" />
     <Compile Include="SeleniumUteis\IssueBody.cs" />
     <Compile Include="SeleniumUteis\SeleniumMaps.cs" />

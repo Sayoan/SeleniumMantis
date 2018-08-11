@@ -44,7 +44,10 @@ namespace Test
         [FindsBy(How = How.XPath, Using = "//tr[3]/td")]
         public IWebElement txtPassword { get; set; }
 
-        
+
+        public static String username = "sayoan.oliveira";
+        public static String password = "automacaobase2";
+
 
 
         public void Login()
@@ -52,8 +55,7 @@ namespace Test
             //implementar
 
             SeleniumMaps Maps = new SeleniumMaps();
-            String username = "sayoan.oliveira";
-            String password = "automacaobase2";
+           
 
 
 
@@ -106,9 +108,36 @@ namespace Test
             }
         }
 
+        public void LoginVazio()
+        {
+            //implementar
 
-    
-    public void LostPassword()
+            SeleniumMaps Maps = new SeleniumMaps();
+            String username = "";
+            String password = "";
+
+
+
+            //método try catch para validar se foi possível acessar a tela inicial
+            try
+            {
+                Maps.PreencherCampo(tfUsername, "username", username);
+                Maps.PreencherCampo(tfPassword, "password", password);
+                Maps.ClicarBotao(btSubmit, "//input[@value='Login']");
+                //Assert.AreEqual("account may be disabled", _driver.FindElement(By.CssSelector("//font")).Text);
+                Maps.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
+
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+        }
+
+
+
+        public void AcessarLostPassword()
     {
         //implementar
 
@@ -118,8 +147,7 @@ namespace Test
         try
         {
                 Maps.ClicarBotao(ltLostPassword, "Lost your password ?");
-                Maps.VerificarItem(txtLostPassword, "Password Reset", "");
-
+             
 
         }
         catch (Exception e)
@@ -128,6 +156,7 @@ namespace Test
         }
     }
 
+       
 
         public void VerificaAcessoLogin()
         {

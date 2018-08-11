@@ -25,7 +25,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         [FindsBy(How = How.Name , Using = "status")]
         public IWebElement cbStatus { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@value='Update Information']")]
+        [FindsBy(How = How.XPath, Using = "//tr[18]/td/input")]
         public IWebElement btUpdate { get; set; }
 
         [FindsBy(How = How.Id, Using = "tag_string")]
@@ -55,7 +55,14 @@ namespace ProjetoSomar.SeleniumPageObjects
         [FindsBy(How = How.XPath, Using = "(//input[@value='Add'])[2]")]
         public IWebElement btAdd { get; set; }
 
-        
+        [FindsBy(How = How.XPath, Using = "(.//*[normalize-space(text()) and normalize-space(.)='Priority'])[1]/following::td[1]")]
+        public IWebElement txtPriority { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "(.//*[normalize-space(text()) and normalize-space(.)='Assign'])[1]/following::td[1]")]
+        public IWebElement tfAssign { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//tr[8]/td[2]")]
+        public IWebElement txtStatus { get; set; }
         
 
         public void AlterarStatus(String status)
@@ -70,7 +77,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             {
                 //Maps.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.CBClick(cbStatus, status, ""); 
+                Maps.CBClick(cbStatus, "", status); 
                
 
 
@@ -115,8 +122,8 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
         }
-
-        public void AlterarPriority(String status)
+        
+            public void AlterarPriority(String status)
         {
 
 
@@ -128,7 +135,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             {
                 //Maps.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.CBClick(cbPriority, status, "");
+                Maps.CBClick(cbPriority, "", status);
 
 
 
@@ -144,6 +151,63 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         }
 
+
+
+        public void VerificaPriority(String status)
+        {
+
+
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            SeleniumMaps Maps = new SeleniumMaps();
+            String ID = "";
+
+            try
+            {
+                //Maps.CBClick(cbStatus, "status", status); 
+                //revisar funcao do combobox
+                Maps.VerificarItem(txtPriority, status, "");
+
+
+
+            }
+            catch (Exception e)
+            {
+
+
+
+
+            }
+
+
+        }
+
+        public void VerificaAssign(String status)
+        {
+
+
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            SeleniumMaps Maps = new SeleniumMaps();
+            String ID = "";
+
+            try
+            {
+                //Maps.CBClick(cbStatus, "status", status); 
+                //revisar funcao do combobox
+                Maps.VerificarItem(tfAssign, status, "");
+
+
+
+            }
+            catch (Exception e)
+            {
+
+
+
+
+            }
+
+
+        }
         public void AlterarResolution(String resolution)
         {
 
@@ -156,7 +220,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             {
                 //Maps.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.CBClick(cbResolution, resolution, "");
+                Maps.CBClick(cbResolution, "", resolution);
 
 
 
@@ -173,6 +237,34 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
         }
+        
+         public void VerificaPrioridade(String Prioridade)
+        {
+
+
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            SeleniumMaps Maps = new SeleniumMaps();
+            String ID = "";
+
+            try
+            {
+                //Maps.CBClick(cbStatus, "status", status); 
+                //revisar funcao do combobox
+                //Maps.VerificarItem();
+                
+
+
+
+            }
+            catch (Exception e)
+            {
+
+
+
+
+            }
+        }
+
 
         public void AtribuirNota(String nota)
         {
@@ -211,7 +303,7 @@ namespace ProjetoSomar.SeleniumPageObjects
                 {
                 //Maps.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.CBClick(cbReproducibility, reprodutibilidade, "");
+                Maps.CBClick(cbReproducibility, "", reprodutibilidade);
 
 
 
@@ -241,7 +333,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             {
                 //Maps.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.CBClick(cbAssign, usuario , "");
+                Maps.CBClick(cbAssign, "" , usuario);
 
 
 
@@ -281,6 +373,16 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             }
+
+
+        }
+
+        public void VerificaStatus(String status)
+        {
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            SeleniumMaps Maps = new SeleniumMaps();
+            
+            Maps.VerificarItem(txtStatus, status, "");
 
 
         }

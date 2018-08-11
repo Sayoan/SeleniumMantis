@@ -35,14 +35,23 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             loginPageObjects.WrongLogin();
         }
-        
+
+        [Test]
+        [Category("Revisados")]
+        public void Login_VerificarLostPassword()
+        {
+            LoginPageObjects loginPageObjects = new LoginPageObjects();
+            loginPageObjects.WrongLogin();
+        }
+
         [Test]
         [Category("Revisados")]
         public void Login_VerificarPerderSenha()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
-            loginPageObjects.LostPassword();
-
+            LogoutPageObjects logoutPageObjects = new LogoutPageObjects();
+            loginPageObjects.AcessarLostPassword();
+            logoutPageObjects.VerificarLostPassword();
         }
 
        

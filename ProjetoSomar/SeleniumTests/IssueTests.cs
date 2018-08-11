@@ -70,7 +70,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void Issue_InsertIssuee_AtribuirTarefa()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -95,6 +95,7 @@ namespace ProjetoSomar.SeleniumTests
              */
             updateIssuePageObjects.AtribuirTarefa("sayoan.oliveira");
             updateIssuePageObjects.Atualizar();
+            updateIssuePageObjects.VerificaAssign("sayoan.oliveira");
             //Assert.AreEqual("confirmed", _driver.FindElement(By.XPath("//tr[8]/td[2]")).Text);
 
         }
@@ -128,7 +129,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void Issue_InsertIssuee_FecharTarefaDuplicada()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -152,12 +153,15 @@ namespace ProjetoSomar.SeleniumTests
              * 
              */
             updateIssuePageObjects.AlterarResolution("duplicate");
-            updateIssuePageObjects.AlterarStatus("close");
+            updateIssuePageObjects.AlterarStatus("closed");
+            updateIssuePageObjects.AtribuirNota("Tarefa Duplicada");
             updateIssuePageObjects.Atualizar();
+
+            updateIssuePageObjects.VerificaStatus("closed");
         }
 
         [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void Issue_InsertIssuee_FecharTarefa()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -180,13 +184,15 @@ namespace ProjetoSomar.SeleniumTests
              * feedback acknowledged confirmed assigned resolved closed
              * 
              */
-            updateIssuePageObjects.AlterarStatus("close");
+            updateIssuePageObjects.AlterarStatus("closed");
             updateIssuePageObjects.Atualizar();
+
+            updateIssuePageObjects.VerificaStatus("closed");
         }
 
 
         [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void Issue_InsertIssuee_AlterarStatusFeedback()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -209,12 +215,15 @@ namespace ProjetoSomar.SeleniumTests
              * feedback acknowledged confirmed assigned resolved closed
              * 
              */
-            updateIssuePageObjects.AlterarStatus("feedback");
+            updateIssuePageObjects.AlterarStatus("acknowledged");
             updateIssuePageObjects.Atualizar();
+            updateIssuePageObjects.VerificaStatus("acknowledged");
+
+
         }
 
         [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void Issue_InsertIssuee_FecharTarefaSemReproducao()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -241,68 +250,16 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.AtribuirNota("Impossível de reproduzir.");
             updateIssuePageObjects.AlterarStatus("closed");
             updateIssuePageObjects.Atualizar();
+
+            updateIssuePageObjects.VerificaStatus("closed");
         }
 
 
-        [Test]
-        [Category("Impedimento da Edicao")]
-        public void Issue_InsertIssuee_MonitorarBug()
-        {
-            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            HomePageObjects homePageObjects = new HomePageObjects();
-            UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
-            loginPageObjects.Login();
-            homePageObjects.VerificarAcessaLogin();
-
-            homePageObjects.VerificaProjeto();
-            homePageObjects.AcessarAbaReportIssue();
-
-            reportIssuesPageObjects.VerificarAcessaReportIssue();
-            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
-            reportIssuesPageObjects.AcessarEdicaoIssue(summary);
-
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
-            updateIssuePageObjects.InserirMonitor("sayoan.oliveira");
-            updateIssuePageObjects.Atualizar();
-        }
+       
+        
 
         [Test]
-        [Category("Impedimento da Edicao")]
-        public void Issue_InsertIssuee_MonitorarBug_UsuárioInexistente()
-        {
-            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            HomePageObjects homePageObjects = new HomePageObjects();
-            UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
-            loginPageObjects.Login();
-            homePageObjects.VerificarAcessaLogin();
-
-            homePageObjects.VerificaProjeto();
-            homePageObjects.AcessarAbaReportIssue();
-
-            reportIssuesPageObjects.VerificarAcessaReportIssue();
-            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
-            reportIssuesPageObjects.AcessarEdicaoIssue(summary);
-
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
-
-          
-            updateIssuePageObjects.Atualizar();
-        }
-
-        [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void Issue_InsertIssuee_AlterarPriority()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -327,39 +284,13 @@ namespace ProjetoSomar.SeleniumTests
              */
             updateIssuePageObjects.AlterarPriority("urgent");
             updateIssuePageObjects.Atualizar();
+            updateIssuePageObjects.VerificaPriority("urgent");
+
+
+
         }
 
-        [Test]
-        [Category("Doing")]
-        public void Issue_InsertIssuee_AnotarPrioridade()
-        {
-            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            HomePageObjects homePageObjects = new HomePageObjects();
-            UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
-            loginPageObjects.Login();
-            homePageObjects.VerificarAcessaLogin();
-
-            homePageObjects.VerificaProjeto();
-            homePageObjects.AcessarAbaReportIssue();
-
-            reportIssuesPageObjects.VerificarAcessaReportIssue();
-            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
-            reportIssuesPageObjects.AcessarEdicaoIssue(summary);
-
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
-
-            updateIssuePageObjects.AlterarPriority("immediate");
-            updateIssuePageObjects.AtribuirNota("Deverá ser priorizado.");
-            updateIssuePageObjects.Atualizar();
-        }
-
-
+       
 
         [Test]
         [Category("Bugado")]
@@ -538,6 +469,8 @@ namespace ProjetoSomar.SeleniumTests
         [Category("Detalhes")]
         public void Issue_GerarPermalink()
         {
+
+            //verificacao ta sem pageobjects
             HomePageObjects homePageObjects = new HomePageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             ViewIssuesPageObjects viewIssuesPageObjects = new ViewIssuesPageObjects();
