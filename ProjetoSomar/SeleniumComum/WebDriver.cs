@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 using SeleniumWebDriver.Basics.SeleniumUteis;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,11 @@ namespace SeleniumWebDriver.Basics
         [SetUp]
         public void SetUp()
         {
-            _driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
+            ChromeOptions chrome = new ChromeOptions();
+
+            _driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4445/wd/hub"), chrome.ToCapabilities());
+            
+            //_driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
             //ChromeDriver: nativo do selenium, usar path para o driver
             //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
 
