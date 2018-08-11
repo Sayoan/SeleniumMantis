@@ -215,7 +215,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             
 
 
-                Maps.CBClick_ElementoAusente(cbProfile, "", "DB3831YZ DB3831YZ DB3831YZ");
+                Maps.CBClick_ElementoAusente(cbProfile, "", conteudo);
 
            
 

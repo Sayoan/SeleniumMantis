@@ -235,6 +235,7 @@ namespace ProjetoSomar.SeleniumPageObjects
                 //trocar de aba
                 var browserTabs = _driver.WindowHandles;
                 _driver.SwitchTo().Window(browserTabs[1]);
+
                 Assert.IsTrue(Regex.IsMatch(_driver.FindElement(By.XPath("//p")).Text, "Following is a permanent link to the currently configured filter:"));
                 //Maps.VerificarItem(permalink, "Following is a permanent link to the currently configured filter:", "");
 

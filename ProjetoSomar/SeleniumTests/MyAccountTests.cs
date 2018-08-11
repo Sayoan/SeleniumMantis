@@ -300,6 +300,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
             myAccountPageObjects.VerificaAcessoProfiles();
+
             string conteudo = myAccountPageObjects.InserirProfile_Validar();
             myAccountPageObjects.BotaoSubmeter();
             conteudo = conteudo + " " + conteudo + " " + conteudo;

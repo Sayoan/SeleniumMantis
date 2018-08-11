@@ -98,20 +98,23 @@ namespace ProjetoSomar.SeleniumUteis
             {
                 WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
-
+                SelectElement elemento = new SelectElement(iwebelement);
 
                 iwebelement.Click();
-                new SelectElement(iwebelement).SelectByText(text);
+                //boolean status = true;
+                elemento.SelectByValue("aaaaaaaaaaaaaaaaaaaaaa");
+                //new SelectElement(iwebelement).SelectByText(text);
                 iwebelement.Click();
 
-                Assert.Fail();
+                Console.WriteLine("Encontrou");
 
 
 
             }
             catch 
             {
-                Assert.IsTrue(true);
+                Console.WriteLine("Não Encontrou");
+                //Assert.IsTrue(status);
             }
 
 
