@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
 using SeleniumWebDriver.Basics.SeleniumUteis;
 using System;
@@ -21,8 +23,8 @@ namespace SeleniumWebDriver.Basics
         //swlbase**
 
         //decoração simbolizando método que executa antes de iniciar o teste
-        [SetUp]
-        public void SetUp() //NATIVO
+        //[SetUp]
+        public void SetUpLocal() //NATIVO
         {
 
             _driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
@@ -37,50 +39,43 @@ namespace SeleniumWebDriver.Basics
             _driver.Manage().Window.Maximize();
         }
 
-        //public void SetUp() //GRID
-        //{
-        //    //ChromeOptions chrome = new ChromeOptions();
+        [SetUp]
+        public void SetUpGrid() //GRID
+        {
+            string navegador = "chrome";
+            string nodeURL = "http://192.168.0.10:4444/wd/hub";
+            if (navegador == "firefox")
+            {
+                FirefoxOptions firefox = new FirefoxOptions();
+                _driver = new RemoteWebDriver(new Uri(nodeURL), firefox.ToCapabilities());
+            }
+            else if (navegador == "chrome")
+            {
+                 
+                ChromeOptions chrome = new ChromeOptions();
+                _driver = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
+            }
+            else if (navegador == "ie")
+            {
+                InternetExplorerOptions ie = new InternetExplorerOptions();
+                _driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
 
-        //    //_driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), chrome.ToCapabilities());
-        //    /*
-        //                FirefoxProfile firefox = new FirefoxProfile();
-        //                DesiredCapabilities desire = new DesiredCapabilities();
-        //                desire.SetCapability(FirefoxDriver.ProfileCapabilityName, firefox);
-        //     */
-
-
-        //    string navegador = "chrome";
-        //    if (navegador == "firefox")
-        //    {
-        //        FirefoxOptions firefox = new FirefoxOptions();
-        //        _driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), firefox.ToCapabilities());
-        //    }
-        //    else if (navegador == "chrome")
-        //    {
-        //        ChromeOptions chrome = new ChromeOptions();
-        //        _driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), chrome.ToCapabilities());
-        //    }
-        //    else if (navegador == "safari")
-        //    {
-        //        SafariOptions chrome = new ChromeOptions();
-        //        _driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), chrome.ToCapabilities());
-
-        //    }
+            }
 
 
-        //    ///127.0.0.1:4444 local
-        //    ///
-        //    //_driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
-        //    //ChromeDriver: nativo do selenium, usar path para o driver
-        //    //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
+            ///127.0.0.1:4444 local
+            ///
+            //_driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
+            //ChromeDriver: nativo do selenium, usar path para o driver
+            //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
 
 
-        //    //Ação que navega para o site
-        //    _driver.Navigate().GoToUrl("http://mantis-prova.base2.com.br/");
+            //Ação que navega para o site
+            _driver.Navigate().GoToUrl("http://mantis-prova.base2.com.br/");
 
-        //    //Ação que maximiza a tela
-        //    _driver.Manage().Window.Maximize();
-        //}
+            //Ação que maximiza a tela
+            _driver.Manage().Window.Maximize();
+        }
 
 
 
