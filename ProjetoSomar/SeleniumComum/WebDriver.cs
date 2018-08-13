@@ -8,6 +8,7 @@ using OpenQA.Selenium.Remote;
 using SeleniumWebDriver.Basics.SeleniumUteis;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,32 +43,31 @@ namespace SeleniumWebDriver.Basics
         [SetUp]
         public void SetUpGrid() //GRID
         {
-            string navegador = "chrome";
+            //criado um appconfig com a configuração desejada
+            string navegador = ConfigurationManager.AppSettings["NavegadorDefault"].ToString();
             string nodeURL = "http://192.168.0.10:4444/wd/hub";
-            if (navegador == "firefox")
+
+            switch (navegador)
             {
-                FirefoxOptions firefox = new FirefoxOptions();
-                _driver = new RemoteWebDriver(new Uri(nodeURL), firefox.ToCapabilities());
-            }
-            else if (navegador == "chrome")
-            {
-                 
-                ChromeOptions chrome = new ChromeOptions();
-                _driver = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
-            }
-            else if (navegador == "ie")
-            {
-                InternetExplorerOptions ie = new InternetExplorerOptions();
-                _driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
+                case ("firefox"):
+                    FirefoxOptions firefox = new FirefoxOptions();
+                    _driver = new RemoteWebDriver(new Uri(nodeURL), firefox.ToCapabilities());
+                 break;
+
+                case ("chrome"):
+                    ChromeOptions chrome = new ChromeOptions();
+                    _driver = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
+                  break;
+
+                case ("ie"):
+                    InternetExplorerOptions ie = new InternetExplorerOptions();
+                    _driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
+                    break;
 
             }
+            
+                           
 
-
-            ///127.0.0.1:4444 local
-            ///
-            //_driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
-            //ChromeDriver: nativo do selenium, usar path para o driver
-            //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
 
 
             //Ação que navega para o site
