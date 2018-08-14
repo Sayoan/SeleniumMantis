@@ -24,7 +24,7 @@ namespace SeleniumWebDriver.Basics
         //swlbase**
 
         //decoração simbolizando método que executa antes de iniciar o teste
-        //[SetUp]
+        [SetUp]
         public void SetUpLocal() //NATIVO
         {
 
@@ -40,7 +40,7 @@ namespace SeleniumWebDriver.Basics
             _driver.Manage().Window.Maximize();
         }
 
-        [SetUp]
+        //[SetUp]
         public void SetUpGrid() //GRID
         {
             //criado um appconfig com a configuração desejada

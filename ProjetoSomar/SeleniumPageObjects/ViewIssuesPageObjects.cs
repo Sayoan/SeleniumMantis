@@ -75,8 +75,20 @@ namespace ProjetoSomar.SeleniumPageObjects
         [FindsBy(How = How.XPath, Using = "//p")]
         public IWebElement permalink { get; set; }
 
-        //Assert.IsTrue(Regex.IsMatch(_driver.FindElement(By.XPath("//p")).Text, "Following is a permanent link to the currently configured filter:"));
+        [FindsBy(How = How.Id, Using = "show_priority_filter_target")]
+        public IWebElement txtFiltroPriority { get; set; }
+
+        [FindsBy(How = How.Id, Using = "show_severity_filter_target")]
+        public IWebElement txtFiltroSeverity { get; set; }
+
+        [FindsBy(How = How.Name, Using = "show_severity[]")]
+        public IWebElement cbSeverity { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Create Short Link")]
+        public IWebElement txtPermalink2 { get; set; }
+
         
+
         public void FiltrarIssue_Prioridade(String prioridade)
         {
 
@@ -89,6 +101,42 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
         }
+
+        public void FiltrarIssue_Severity(String severity)
+        {
+
+            SeleniumMaps Maps = new SeleniumMaps();
+
+            //Problemas com o CB, ele não está identificando o objeto
+            Maps.CBClick(cbSeverity, "", severity);
+            Maps.ClicarBotao(btFilterPageFilter, "");
+
+
+
+        }
+
+        public void ValidacaoFiltroTarefa_Priority (String prioridade)
+        {
+
+            SeleniumMaps Maps = new SeleniumMaps();
+
+            Maps.VerificarItem(txtFiltroPriority, prioridade, "");
+
+
+
+        }
+
+        public void ValidacaoFiltroTarefa_Severity(String severity)
+        {
+
+            SeleniumMaps Maps = new SeleniumMaps();
+
+            Maps.VerificarItem(txtFiltroSeverity, severity, "");
+
+
+
+        }
+
 
         public void AcessoFiltrar()
         {
@@ -235,9 +283,8 @@ namespace ProjetoSomar.SeleniumPageObjects
                 //trocar de aba
                 var browserTabs = _driver.WindowHandles;
                 _driver.SwitchTo().Window(browserTabs[1]);
+                Maps.VerificarItem(txtPermalink2, "Create Short Link", "");
 
-                Assert.IsTrue(Regex.IsMatch(_driver.FindElement(By.XPath("//p")).Text, "Following is a permanent link to the currently configured filter:"));
-                //Maps.VerificarItem(permalink, "Following is a permanent link to the currently configured filter:", "");
 
             }
             catch (Exception e)

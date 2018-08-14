@@ -292,34 +292,32 @@ namespace ProjetoSomar.SeleniumTests
 
        
 
+       
+
         [Test]
-        [Category("Bugado")]
-        public void Issue_IssueExistente_AlterarCategoria()
+        [Category("Revisados")]
+        public void Issue_BuscarIssueInexistente()
         {
             //teste pra quando já se tem o ID
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            String ID = "0001489";
+            String ID = "9999999";
             //DataDriven dataDriven = new DataDriven();
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
             homePageObjects.VerificaProjeto();
             homePageObjects.ProcurarIssue(ID);
+            homePageObjects.ValidacaoIssueInexiste(ID);
 
-            reportIssuesPageObjects.AcessarEdicaoIssue_TelaPosBuscarID();
-            /*
-            * feedback acknowledged confirmed assigned resolved closed
-            * 
-            */
-            updateIssuePageObjects.AlterarStatus("confirmed");
-            updateIssuePageObjects.Atualizar();
+                        
 
 
 
         }
+
 
         [Test]
         [Category("Revisados")]
@@ -466,8 +464,8 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Detalhes")]
-        public void Issue_GerarPermalink()
+        [Category("Revisados")]
+            public void Issue_GerarPermalink()
         {
 
             //verificacao ta sem pageobjects

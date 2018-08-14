@@ -281,6 +281,22 @@ namespace Test
             }
         }
 
+        public void ValidacaoIssueInexiste(string ID)
+        {
+            SeleniumMaps Maps = new SeleniumMaps();
+            try
+            {
+                
+                String texto = "Issue " + ID + " not found.";
+                Maps.VerificarItem(tfErro, texto, "");
+                //Assert.AreEqual("A number was expected for bug_id.", _driver.FindElement(By.XPath("//p")).Text);
+
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
         public void Logout()
         {
             SeleniumMaps Maps = new SeleniumMaps();
