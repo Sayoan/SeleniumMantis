@@ -536,7 +536,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Bugado")]
+        [Category("Revisados")]
         public void Issue_AtribuirSayoan()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -553,6 +553,7 @@ namespace ProjetoSomar.SeleniumTests
             //Aplicar filtro
             viewIssuesPageObjects.SelecionarTudo();
             viewIssuesPageObjects.AtribuirSayoan();
+            viewIssuesPageObjects.VerificaAtribuicaoSayoan();
 
 
 

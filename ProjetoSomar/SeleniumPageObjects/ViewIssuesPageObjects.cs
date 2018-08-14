@@ -87,7 +87,15 @@ namespace ProjetoSomar.SeleniumPageObjects
         [FindsBy(How = How.LinkText, Using = "Create Short Link")]
         public IWebElement txtPermalink2 { get; set; }
 
+        [FindsBy(How = How.Name, Using = "bug_arr[]")]
+        public IWebElement checkboxIssue { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "sayoan.oliveira")]
+        public IWebElement txtVerificaAssignSayoan { get; set; }
+
         
+
+
 
         public void FiltrarIssue_Prioridade(String prioridade)
         {
@@ -207,26 +215,35 @@ namespace ProjetoSomar.SeleniumPageObjects
             //Numero de Issues
             //Pega o campo da tela e joga numa string
             
-            //****NECESSARIO VALIDAR QUANDO FOR VAZIO
+            //****DAQUI PRA BAIXO EXISTE ALTO RISCO DE ENCONTRAR UMA GAMBIRA****
             String tamanho = _driver.FindElement(By.XPath("//table[@id='buglist']/tbody/tr/td/span")).Text;
-            tamanho = tamanho.Substring(tamanho.Length - 9); //Pegar até o indice
-            tamanho = tamanho.Substring(0,2); //Retira o resto de informações inúteis
-            int NIssues = Convert.ToInt32(tamanho); //Casting explicito
+            //sintaxe (0 - 0 / 0)  
+            String[] parts = tamanho.Split('/'); //separar em relação ao '/'
+            String[] parts2 = parts[0].Split('-'); //pega a direita do '-'
+                  
+            int NIssues = Convert.ToInt32(parts2[1]); //Casting explicito
             
 
 
             try
             {
-                if (NIssues == 1) //quando tiver só um
+                if (NIssues < 1) //quando tiver só um
+                {
+                    //Não existem issues
+                    Assert.Fail();
+                }
+                else if (NIssues == 1) //quando tiver só um
                 {
                     //primeira linha é diferente 
-                    _driver.FindElement(By.Name("bug_arr[]")).Click();
+                    Maps.ClicarBotao(checkboxIssue);
                 }
                 else if (NIssues > 1)
                 { //quando tiver mais que um
 
                     //primeira linha sempre é diferente 
-                    _driver.FindElement(By.Name("bug_arr[]")).Click();
+                    Maps.ClicarBotao(checkboxIssue);
+
+                    NIssues++;//necessário para escolher o ultimo
 
                     //percorre procurando um a um
                     while (indice < NIssues)
@@ -234,7 +251,7 @@ namespace ProjetoSomar.SeleniumPageObjects
                         _driver.FindElement(By.XPath("(//input[@name='bug_arr[]'])[" + indice + "]")).Click();
                         indice++;
                     }
-
+                    
                 }
             }
             catch (Exception e)
@@ -255,6 +272,15 @@ namespace ProjetoSomar.SeleniumPageObjects
             Maps.CBClick(cbActionsIssues, "action", "Delete");
             Maps.ClicarBotao(btOk);
             Maps.ClicarBotao(btConfirmDelete);
+        }
+
+        public void VerificaAtribuicaoSayoan()
+        {
+            SeleniumMaps Maps = new SeleniumMaps();
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+
+
+            Maps.VerificarItem(txtVerificaAssignSayoan, "sayoan.oliveira", "");
         }
 
         public void AtribuirSayoan()
