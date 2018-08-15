@@ -15,8 +15,7 @@ namespace ProjetoSomar.SeleniumTests
 {
     class HomePageTests : WebDriver
     {
-        public String Projeto = "SayoanOliveira";
-        public String ProjetoAll = "All Projects";
+  
 
         //[Test]
         public void Home_TestesHomePage()
@@ -43,7 +42,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(ProjetoAll);
+            homePageObjects.EscolherProjeto(Credentials.ProjetoAll);
 
 
         }
@@ -74,7 +73,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
             homePageObjects.VerificaProjeto();
 
 
@@ -92,7 +91,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
 
             homePageObjects.AcessarAbaViewIssue();
             viewIssuesPageObjects.VerificaAcessoViewIssues();
@@ -134,7 +133,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
 
             homePageObjects.AcessarAbaSummary();
             summaryPageObjects.AcessarAbaSummary();
@@ -156,7 +155,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
 
             homePageObjects.AcessarAbaManage();
             managePageObjects.VerificarAccessoAbaManage();
@@ -199,7 +198,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
             homePageObjects.VerificaProjeto();
 
             homePageObjects.ProcurarIssue_Vazia();

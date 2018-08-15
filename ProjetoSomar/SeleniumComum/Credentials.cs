@@ -21,8 +21,7 @@ namespace ProjetoSomar.SeleniumComum
 
         public Credentials()
         {
-         //String username = "";
-         //String password = "";
+         
 
          }
        

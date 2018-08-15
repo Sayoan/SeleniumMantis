@@ -5,6 +5,7 @@ using ProjetoSomar.SeleniumPageObjects;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace ProjetoSomar.SeleniumTests
         [Category("Revisados")]
         public void Login_VerificarLogin()
         {
+          
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             loginPageObjects.Login();

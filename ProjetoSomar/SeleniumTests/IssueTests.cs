@@ -19,26 +19,7 @@ namespace ProjetoSomar.SeleniumTests
 {
     class IssueTests : WebDriver
     {
-       // [Category("Producao"), TestCaseSource("ConfiguracaoInstituicoes")]
-         // [Test]
-        public void Issue_InsertIssuee()
-        {
-            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            HomePageObjects homePageObjects = new HomePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
-            loginPageObjects.Login();
-            homePageObjects.VerificarAcessaLogin();
-
-            homePageObjects.VerificaProjeto();
-            homePageObjects.AcessarAbaReportIssue();
-
-            reportIssuesPageObjects.VerificarAcessaReportIssue();
-            reportIssuesPageObjects.InserirTarefa();
-           
-        }
-        
+               
         [Test]
         [Category("Revisados")]
         public void Issue_InsertIssuee_AlterarStatus()
@@ -77,7 +58,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
+           
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
@@ -96,7 +77,7 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.AtribuirTarefa("sayoan.oliveira");
             updateIssuePageObjects.Atualizar();
             updateIssuePageObjects.VerificaAssign("sayoan.oliveira");
-            //Assert.AreEqual("confirmed", _driver.FindElement(By.XPath("//tr[8]/td[2]")).Text);
+            
 
         }
 
@@ -108,7 +89,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
+            
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
@@ -120,10 +101,6 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarResolution("no change required");
             updateIssuePageObjects.Atualizar();
         }
@@ -136,7 +113,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
+            
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
@@ -148,10 +125,6 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarResolution("duplicate");
             updateIssuePageObjects.AlterarStatus("closed");
             updateIssuePageObjects.AtribuirNota("Tarefa Duplicada");
@@ -168,8 +141,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
+            
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
 
@@ -180,10 +152,6 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarStatus("closed");
             updateIssuePageObjects.Atualizar();
 
@@ -199,7 +167,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
+            
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
@@ -211,10 +179,6 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarStatus("acknowledged");
             updateIssuePageObjects.Atualizar();
             updateIssuePageObjects.VerificaStatus("acknowledged");
@@ -230,8 +194,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
+         
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
 
@@ -242,10 +205,6 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarReprodutibilidade("unable to reproduce");
             updateIssuePageObjects.AtribuirNota("Impossível de reproduzir.");
             updateIssuePageObjects.AlterarStatus("closed");
@@ -266,8 +225,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
+         
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
 
@@ -278,10 +236,6 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarPriority("urgent");
             updateIssuePageObjects.Atualizar();
             updateIssuePageObjects.VerificaPriority("urgent");
@@ -298,21 +252,19 @@ namespace ProjetoSomar.SeleniumTests
         [Category("Revisados")]
         public void Issue_BuscarIssueInexistente()
         {
-            //teste pra quando já se tem o ID
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
             String ID = "9999999";
-            //DataDriven dataDriven = new DataDriven();
+           
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
             homePageObjects.VerificaProjeto();
             homePageObjects.ProcurarIssue(ID);
             homePageObjects.ValidacaoIssueInexiste(ID);
-
-                        
+                                   
 
 
 
@@ -326,8 +278,7 @@ namespace ProjetoSomar.SeleniumTests
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
-            //DataDriven dataDriven = new DataDriven();
-
+            
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
 
@@ -352,7 +303,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             ViewIssuesPageObjects viewIssuesPageObjects = new ViewIssuesPageObjects();
-            DataDriven dataDriven = new DataDriven();
+            
 
 
             loginPageObjects.Login();
@@ -378,9 +329,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             ViewIssuesPageObjects viewIssuesPageObjects = new ViewIssuesPageObjects();
-            DataDriven dataDriven = new DataDriven();
-
-
+          
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
 
@@ -414,37 +363,17 @@ namespace ProjetoSomar.SeleniumTests
 
  
 
-        //[Test]
-        public void Issue_InsertIssueeTesteCSV()
-        {
-            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            HomePageObjects homePageObjects = new HomePageObjects();
-            DataDriven dataDriven = new DataDriven();
-
-            loginPageObjects.Login();
-            homePageObjects.VerificarAcessaLogin();
-
-            homePageObjects.VerificaProjeto();
-            homePageObjects.AcessarAbaReportIssue();
-
-            reportIssuesPageObjects.VerificarAcessaReportIssue();
-            reportIssuesPageObjects.InserirTarefa(dataDriven);
-        }
-
-
-
+       
         /// <summary>
         /// TESTES ENVOLVENDO DD
-        /// Inserir uma tarefa com 4 parâmetros dinamicos e o restante estático
+        /// Inserir uma tarefa com 6 parâmetros dinâmicos e o restante estático
         /// </summary>
         /// 
 
         [Category("DataDriven"), TestCaseSource("InsercaoIssues")]
         public void Issue_DD_InsertSimple(string category, string reproducibility, string severity, string priority, string summary, string description)
         {
-
-            //receber 4 parâmetros pelo DD e gerar os CT
+             //receber 6 parâmetros pelo DD e gerar os CT
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -459,16 +388,13 @@ namespace ProjetoSomar.SeleniumTests
             reportIssuesPageObjects.VerificarAcessaReportIssue();
             reportIssuesPageObjects.InserirIssue_Simple(category, reproducibility, severity, priority, summary, description);
 
-            //VERIFICAR SUMMARY AO INSERIR CADA TAREFA COMO?EDITANDO ELA E VERIFICANDO O SUMARIO
-        }
+         }
 
 
         [Test]
         [Category("Revisados")]
             public void Issue_GerarPermalink()
         {
-
-            //verificacao ta sem pageobjects
             HomePageObjects homePageObjects = new HomePageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             ViewIssuesPageObjects viewIssuesPageObjects = new ViewIssuesPageObjects();
@@ -575,26 +501,22 @@ namespace ProjetoSomar.SeleniumTests
         }
 
 
-        // [Test]
-        public void testDD()
-        {
-            DataDriven dt = new DataDriven();
-            dt.filldatafromCsv();
-        }
-
-
-        public static List<TestCaseData> InsercaoIssues
+      public static List<TestCaseData> InsercaoIssues
         {
            
             get
             {
-                //IssueBody issueBody = new IssueBody(); //corpo da issue(tarefa)
+                
                 var testCases = new List<TestCaseData>();
 
                 string[] split = { "" };
                 ArrayList ItemList = new ArrayList();
-
-                using (var fs = File.OpenRead(@"C:\Users\saymon.oliveira\Documents\Automacao Mantis\AutomacaoSomar-master\input_date.csv"))
+                //qq rola, pegando o patch do projeto vem junto "file:/" + "resto do patch"
+                String patch = (Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase))) + @"\input_date.csv");
+                //retirando lixo file:\
+                patch = patch.Remove(0, 6);
+               //arquivo csv tem que estar dentro da pasta do projeto!
+                using (var fs = File.OpenRead(@patch))
                 using (var sr = new StreamReader(fs))
                 {
                     string line = string.Empty;
@@ -606,7 +528,7 @@ namespace ProjetoSomar.SeleniumTests
                         if (line != null)
                         {
                             split = line.Split(new char[] { ',' }, StringSplitOptions.None);
-                            Console.WriteLine(split);
+                            
                              string category = split[0].Trim(); //category
                              string reproducibility = split[1].Trim(); //reproducibility
                              string severity = split[2].Trim(); //severity

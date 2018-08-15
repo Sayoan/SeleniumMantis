@@ -170,7 +170,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
             SeleniumMaps Maps = new SeleniumMaps();
             HomePageObjects homePageObjects = new HomePageObjects();
-            DataDriven data = new DataDriven();
+            
            
             //veriricar espera
 

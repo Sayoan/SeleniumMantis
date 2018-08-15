@@ -262,48 +262,7 @@ namespace Test
         }
 
 
-        public void InserirTarefa(DataDriven dataDriven)
-        {
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
-            string[] dados = dataDriven.filldatafromCsv();
-
-
-            Maps.CBClick(cbCategory, "category_id", dados[0]);
-            Maps.CBClick(cbReproducibility, "reproducibility", dados[1]);
-            Maps.CBClick(cbSeverity, "severity", "feature");
-            Maps.CBClick(cbSeverity, "priority", "none");
-            Maps.CBClick(cbSeverity, "profile_id", "Desktop Windows 10");
-            Maps.PreencherCampo(tfPlatform, "platform", "teste1");
-            Maps.PreencherCampo(tfOs, "os", "teste2");
-            Maps.PreencherCampo(tfOs_Build, "os_build", "teste3");
-            Maps.CBClick(cbHandler, "handler_id", "administrator");
-            Maps.PreencherCampo(tfSummary, "summary", "TESTE_SUMMARY");
-            Maps.PreencherCampo(tfdDescription, "description", "teste4");
-            Maps.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
-            Maps.PreencherCampo(tfAdditional, "additional_info", "teste4");
-
-
-            //Maps.CBClick(cbCategory, "category_id", "[All Projects] app_14");
-            //Maps.CBClick(cbReproducibility, "reproducibility", dados[0]);
-            //Maps.CBClick(cbSeverity, "severity", "feature");
-            //Maps.CBClick(cbSeverity, "priority", "none");
-            //Maps.CBClick(cbSeverity, "profile_id", "Desktop Windows 10");
-            //Maps.PreencherCampo(tfPlatform, "platform", "teste1");
-            //Maps.PreencherCampo(tfOs, "os", "teste2");
-            //Maps.PreencherCampo(tfOs_Build, "os_build", "teste3");
-            //Maps.CBClick(cbHandler, "handler_id", "administrator");
-            //Maps.PreencherCampo(tfSummary, "summary", "teste4");
-            //Maps.PreencherCampo(tfdDescription, "description", "teste4");
-            //Maps.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
-            //Maps.PreencherCampo(tfAdditional, "additional_info", "teste4");
-
-            _driver.FindElement(By.XPath("(//input[@name='view_state'])[2]")).Click();
-            _driver.FindElement(By.Name("view_state")).Click();
-            _driver.FindElement(By.XPath("//input[@value='Submit Report']")).Click();
-
-
-        }
+        
 
         public String PegarIssueInserida(String summary)
         {
