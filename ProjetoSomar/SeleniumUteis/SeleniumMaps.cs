@@ -100,10 +100,9 @@ namespace ProjetoSomar.SeleniumUteis
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                 SelectElement elemento = new SelectElement(iwebelement);
 
+
                 iwebelement.Click();
-                //boolean status = true;
-                elemento.SelectByValue("aaaaaaaaaaaaaaaaaaaaaa");
-                //new SelectElement(iwebelement).SelectByText(text);
+                new SelectElement(iwebelement).SelectByText(text);
                 iwebelement.Click();
 
                 Console.WriteLine("Encontrou");

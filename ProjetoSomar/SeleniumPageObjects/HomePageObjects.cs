@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumUteis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ProjetoSomar.SeleniumComum;
 
 namespace Test
 {
@@ -79,7 +80,7 @@ namespace Test
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                Maps.CBClick(cbProjeto, "", Projeto);
+                Maps.CBClick(cbProjeto, "", Credentials.Projeto);
                 //NUnit.Framework.Assert.AreEqual("Sayoan Oliveira's", _driver.FindElement(By.Name("project_id")).Text);
 
             }

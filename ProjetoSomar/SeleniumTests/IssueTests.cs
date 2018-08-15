@@ -511,23 +511,30 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Bugado")]
+        [Category("Revisados")]
         public void Issue_ExclusaoTotal()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             ViewIssuesPageObjects viewIssuesPageObjects = new ViewIssuesPageObjects();
+            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
 
             loginPageObjects.Login();
-
             homePageObjects.VerificarAcessaLogin();
+
+            homePageObjects.AcessarAbaReportIssue();
+            reportIssuesPageObjects.VerificarAcessaReportIssue();
+            //Obriga inserir uma tarefa e verifica se foi excluída
+            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();
+
             homePageObjects.AcessarAbaViewIssue();
 
             viewIssuesPageObjects.VerificaAcessoViewIssues();
             viewIssuesPageObjects.SelecionarTudo();
-
             viewIssuesPageObjects.Excluir();
 
+            viewIssuesPageObjects.VerificaZero();
+            
 
 
 
@@ -542,10 +549,16 @@ namespace ProjetoSomar.SeleniumTests
             HomePageObjects homePageObjects = new HomePageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             ViewIssuesPageObjects viewIssuesPageObjects = new ViewIssuesPageObjects();
+            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
 
             loginPageObjects.Login();
-
             homePageObjects.VerificarAcessaLogin();
+            homePageObjects.AcessarAbaReportIssue();
+
+            reportIssuesPageObjects.VerificarAcessaReportIssue();
+            //Obriga inserir uma tarefa
+            String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();
+
             homePageObjects.AcessarAbaViewIssue();
 
             viewIssuesPageObjects.VerificaAcessoViewIssues();

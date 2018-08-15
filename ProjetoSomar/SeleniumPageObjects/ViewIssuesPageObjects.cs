@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -93,8 +94,10 @@ namespace ProjetoSomar.SeleniumPageObjects
         [FindsBy(How = How.LinkText, Using = "sayoan.oliveira")]
         public IWebElement txtVerificaAssignSayoan { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//table[@id='buglist']/tbody/tr/td/span")]
+        public IWebElement txtQuantidadeIssues { get; set; }
         
-
+        
 
 
         public void FiltrarIssue_Prioridade(String prioridade)
@@ -211,12 +214,12 @@ namespace ProjetoSomar.SeleniumPageObjects
             WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
             //método try catch para validar se foi possível acessar a tela inicial
             int indice = 2;
-            
+
             //Numero de Issues
             //Pega o campo da tela e joga numa string
-            
+
             //****DAQUI PRA BAIXO EXISTE ALTO RISCO DE ENCONTRAR UMA GAMBIRA****
-            String tamanho = _driver.FindElement(By.XPath("//table[@id='buglist']/tbody/tr/td/span")).Text;
+            String tamanho = txtQuantidadeIssues.Text;
             //sintaxe (0 - 0 / 0)  
             String[] parts = tamanho.Split('/'); //separar em relação ao '/'
             String[] parts2 = parts[0].Split('-'); //pega a direita do '-'
@@ -227,12 +230,14 @@ namespace ProjetoSomar.SeleniumPageObjects
 
             try
             {
-                if (NIssues < 1) //quando tiver só um
-                {
-                    //Não existem issues
-                    Assert.Fail();
-                }
-                else if (NIssues == 1) //quando tiver só um
+                //if (NIssues < 1) //quando tiver só um
+                //{
+                //    String x = "";
+                //    //Não existem issues
+                //    Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(true);
+                //}
+                //else 
+                if (NIssues == 1) //quando tiver só um
                 {
                     //primeira linha é diferente 
                     Maps.ClicarBotao(checkboxIssue);
@@ -256,11 +261,36 @@ namespace ProjetoSomar.SeleniumPageObjects
             }
             catch (Exception e)
             {
+                //NÃO EXISTEM TAREFAS PARA ATRIBUIR
                 NUnit.Framework.Assert.Fail(e.ToString());
             }
 
 
         }
+
+        public void VerificaZero()
+        {
+            SeleniumMaps Maps = new SeleniumMaps();
+            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+
+            String tamanho = txtQuantidadeIssues.Text;
+            String[] parts = tamanho.Split('/'); //separar em relação ao '/'
+            String[] parts2 = parts[0].Split('-'); //pega a direita do '-'
+
+            int NIssues = Convert.ToInt32(parts2[1]); //Casting explicito
+
+            if (NIssues == 0)
+            {
+                NUnit.Framework.Assert.IsTrue(true);
+
+            }
+            else
+            {
+                NUnit.Framework.Assert.Fail();
+            }
+
+        }
+
 
 
         public void Excluir()

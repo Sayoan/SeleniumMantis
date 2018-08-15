@@ -19,8 +19,10 @@ namespace ProjetoSomar.SeleniumPageObjects
             PageFactory.InitElements(WebDriver._driver, this);
         }
 
-        [FindsBy(How = How.LinkText, Using = "Assigned to Me (Unresolved)")]
+        [FindsBy(How = How.LinkText, Using = "Unassigned")]
         public IWebElement ltUnsolved { get; set; }
+
+        
 
          public void VerificaAcessoMyView()
         {
@@ -31,7 +33,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             try
             {
                 //Assert.AreEqual("Assigned to Me (Unresolved)", _driver.FindElement(By.LinkText("Assigned to Me (Unresolved)")).Text);
-                Maps.VerificarItem(ltUnsolved, "Assigned to Me (Unresolved)", "");
+                Maps.VerificarItem(ltUnsolved, "Unassigned", "");
                
             }
             catch (Exception e)

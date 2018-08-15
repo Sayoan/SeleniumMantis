@@ -112,7 +112,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
 
             homePageObjects.AcessarAbaMyView();
             myViewPageObjects.VerificaAcessoMyView();
@@ -178,7 +178,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Projeto);
+            homePageObjects.EscolherProjeto(Credentials.Projeto);
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.VerificarAcessoAbaMyAccount();

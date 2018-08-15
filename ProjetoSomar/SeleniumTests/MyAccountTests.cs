@@ -309,6 +309,7 @@ namespace ProjetoSomar.SeleniumTests
             myAccountPageObjects.Excluir(); 
             myAccountPageObjects.VerificarExclusao(conteudo);
 
+
            
 
 

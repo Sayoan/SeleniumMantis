@@ -211,11 +211,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-           
-            
-
-
-                Maps.CBClick_ElementoAusente(cbProfile, "", conteudo);
+             Maps.CBClick_ElementoAusente(cbProfile, "", conteudo);
 
            
 
