@@ -45,7 +45,7 @@ namespace SeleniumWebDriver.Basics
         {
             //criado um appconfig com a configuração desejada
             string navegador = ConfigurationManager.AppSettings["NavegadorDefault"].ToString();
-            string nodeURL = "http://192.168.0.10:4444/wd/hub";
+            string nodeURL = ConfigurationManager.AppSettings["IpHub"].ToString();
 
             switch (navegador)
             {
