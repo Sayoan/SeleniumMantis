@@ -44,6 +44,7 @@
 | Tests | Classe Mãe de todo o teste, herdando valores da WebDriver e executando as suites de testes |
 | SeleniumUteis | Classe responsável pelo patch do driver (Pode ser substituido por urls estáticas) |
 | WebDriver | Cria o Driver(recebe o patch, aqui ele pode ser estático), navega para URL e amplia a tela, dentro dele é necessário escolher se será local ou através do selenium grid|
+| PageObjects | Classe responsável pelo mapeamento dos elementos da tela e seus métodos|
 | Maps | Classe responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
 | Credentials | Classe responsável por conter crendenciais |
 | GerarRandom | Classe responsável por gerar conteúdo genérico |
