@@ -1,4 +1,6 @@
 ﻿# Configuração Automação - Selenium
+ Este projeto tem como principal propósito a prática de Automação envolvendo diversas tecnologias e padrões de desenvolvimento, linguagem C#, Selenium WebDriver e SeleniumGrid. O sistema que foi automatizado foi o Mantis - Bug Tracker.
+ 
 # Projeto Mantis
  - 50 Casos de teste (Incluindo um DDT - arquivo input_date.csv) que foram estruturados em 7 tópicos principais:
  -HOME
