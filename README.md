@@ -2,11 +2,17 @@
 # Projeto Mantis
  - 50 Casos de teste (Incluindo um DDT - arquivo input_date.csv) que foram estruturados em 7 tópicos principais:
  -HOME
+
 -ISSUE
+
 -LOGIN
+
 -LOST_PASSWORD
+
 -MANAGE
+
 -MY_ACCOUNT
+
 -VIEW_ISSUES
 
 - PageObjects
@@ -140,9 +146,6 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 }
 ```
 
-Criar arquivo de configuracao(AppConfig) no visual studio
-
-Gerar Key do navegador
 
 ```
 Agradecimentos: Saymon Oliveira e Base2 Tecnologia
