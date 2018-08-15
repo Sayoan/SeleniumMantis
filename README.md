@@ -151,7 +151,7 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 Configuração do WebDriver com o RemoteWebDriver 
 ![alt text](https://i.imgur.com/l73Ilqv.png)
 
-```
 
-Agradecimentos: Saymon Oliveira https://github.com/saymowan
-Fonte: https://www.guru99.com/introduction-to-selenium-grid.html
+Agradecimentos: [Saymon Oliveira](https://github.com/saymowan)
+
+[Fonte com mais informações do Selenium Grid - Guru99](https://www.guru99.com/introduction-to-selenium-grid.html)
