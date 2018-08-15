@@ -147,7 +147,8 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
   "timeout": 1800
 }
 ```
-
+Configuração do WebDriver com o RemoteWebDriver 
+https://imgur.com/a/oiIzOtC
 
 ```
 Agradecimentos: Saymon Oliveira e Base2 Tecnologia
