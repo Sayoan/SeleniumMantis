@@ -148,7 +148,7 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 }
 ```
 Configuração do WebDriver com o RemoteWebDriver 
-https://imgur.com/a/oiIzOtC
+![alt text](https://i.imgur.com/l73Ilqv.png)
 
 ```
 Agradecimentos: Saymon Oliveira e Base2 Tecnologia
