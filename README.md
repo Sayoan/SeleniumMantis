@@ -44,9 +44,9 @@
 | Tests | Classe Mãe de todo o teste, herdando valores da WebDriver e executando as suites de testes |
 | SeleniumUteis | Classe responsável pelo patch do driver (Pode ser substituido por urls estáticas) |
 | WebDriver | Cria o Driver(recebe o patch, aqui ele pode ser estático), navega para URL e amplia a tela, dentro dele é necessário escolher se será local ou através do selenium grid|
-| Maps | Classes responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
-| Credentials | Classes responsável por conter crendenciais |
-| GerarRandom | Classes responsável por gerar conteúdo genérico |
+| Maps | Classe responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
+| Credentials | Classe responsável por conter crendenciais |
+| GerarRandom | Classe responsável por gerar conteúdo genérico |
 
 # Fluxo de Execução
 
@@ -59,7 +59,7 @@ Baixar o arquivo do selenium server
 ```sh
 https://www.seleniumhq.org/download/
 ```
-Colocar o Jar em C: e abrir o CMD na pasta(Shift+Botão Direito)
+Colocar o Jar em C: e abrir o CMD na pasta (Shift+Botão Direito)
 
 Executar o comando via CMD
 ```sh
