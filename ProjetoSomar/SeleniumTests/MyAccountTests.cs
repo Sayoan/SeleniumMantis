@@ -278,7 +278,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Doing")]
+        [Category("Revisados")]
         public void MyAccount_InserirProfile_Excluir()
         {
             //OSBUILD VAZIO
