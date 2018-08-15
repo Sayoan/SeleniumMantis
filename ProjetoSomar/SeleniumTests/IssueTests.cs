@@ -28,7 +28,7 @@ namespace ProjetoSomar.SeleniumTests
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
             UpdateIssuePageObjects updateIssuePageObjects = new UpdateIssuePageObjects();
-            //DataDriven dataDriven = new DataDriven();
+           
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
@@ -40,13 +40,9 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             reportIssuesPageObjects.AcessarEdicaoIssue(summary);
 
-            /*
-             * feedback acknowledged confirmed assigned resolved closed
-             * 
-             */
             updateIssuePageObjects.AlterarStatus("confirmed");
             updateIssuePageObjects.Atualizar();
-            //Assert.AreEqual("confirmed", _driver.FindElement(By.XPath("//tr[8]/td[2]")).Text);
+            
            
         }
 
