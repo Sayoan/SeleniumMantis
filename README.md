@@ -94,11 +94,11 @@ Colocar o Jar em C: e abrir o CMD na pasta (Shift+Botão Direito)
 
 Executar o comando via CMD
 ```sh
- java -jar selenium-server-standalone-2.30.0.jar -role hub
+ java -jar seleniumserver.jar -role hub
  ```
 Caso a porta esteja ocupada use:
 ```sh
- java -jar selenium-server-standalone-2.30.0.jar -port 4445 -role hub
+ java -jar seleniumserver.jar -port 4445 -role hub
 ```
 Acessar o servidor via navegador e verificar se o HUB está conectado
 ```sh
