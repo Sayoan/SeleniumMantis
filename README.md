@@ -180,7 +180,7 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 }
 ```
 # Configuração do WebDriver com o RemoteWebDriver 
-Configurar via AppConfig a key responsável pelo NavegadorDefault e HubIp.
+Configurar via AppConfig a key responsável pelo NavegadorDefault e IpHub.
 ![alt text](https://i.imgur.com/l73Ilqv.png)
 
 
