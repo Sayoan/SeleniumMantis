@@ -56,7 +56,7 @@
 
 # Page Objects
 Padrão de Projeto onde temos manipulação de Objetos através de Elementos da Tabela mapeados com IWebElement, classes genéricas e métodos genéricos.
-![alt text](https://i.imgur.com/HrpyE9u.png)
+![alt text](https://i.imgur.com/Y6Lxiuc.png)
 
 
 # Data Driven Testing
@@ -187,5 +187,6 @@ Configurar via AppConfig a key responsável pelo NavegadorDefault e HubIp.
 Agradecimentos: [Saymon Oliveira](https://github.com/saymowan)
 
 [Fonte com mais informações do Selenium Grid - Guru99](https://www.guru99.com/introduction-to-selenium-grid.html)
+
 [Informações sobre Data Driven Testing - Guru99](https://www.guru99.com/data-driven-testing.html)
 
