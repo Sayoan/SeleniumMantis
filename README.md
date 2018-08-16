@@ -85,6 +85,8 @@ Criação do Teste recebendo um TesteCaseSource referente à lista retornada pel
 
 
 # Configuração Selenium Grid
+O Selenium-Grid permite que você execute seus testes em diferentes máquinas em diferentes navegadores em paralelo. Ou seja, executando vários testes ao mesmo tempo em diferentes máquinas executando diferentes navegadores e sistemas operacionais. 
+
 Baixar o arquivo do selenium server
 ```sh
 https://www.seleniumhq.org/download/
