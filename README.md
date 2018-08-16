@@ -57,6 +57,11 @@
 * Execução do DDT para preenchimento da massa de testes
 * Execução dos demais testes
 
+# Page Objects
+Padrão de Projeto onde temos manipulação de Objetos através de Elementos da Tabela mapeados com IWebElement, classes genéricas e métodos genéricos.
+![alt text](https://i.imgur.com/R4NdeTI.png)
+
+
 # Data Driven Testing
 O Data-driven é uma estrutura de automação de testes que armazena dados de teste em uma tabela ou no formato de planilha distribuída. Isso permite que os engenheiros de automação tenham um único script de teste que possa executar testes para todos os dados de teste na tabela. Neste projeto foi utilizado o DDT para o report de issues e suas variações.
 
@@ -80,9 +85,6 @@ Criação do Teste recebendo um TesteCaseSource referente à lista retornada pel
         public void Issue_DD_InsertSimple(string category, string reproducibility, string severity, string priority, string summary, string description)
         {}
 ```
-
-
-
 
 # Configuração Selenium Grid
 O Selenium-Grid permite que você execute seus testes em diferentes máquinas em diferentes navegadores em paralelo. Ou seja, executando vários testes ao mesmo tempo em diferentes máquinas executando diferentes navegadores e sistemas operacionais. 
