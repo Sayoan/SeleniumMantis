@@ -22,9 +22,6 @@
 
 -VIEW_ISSUES
 
-
- 
-
 # Ferramentas
 
   - Visual Studio Enterprise (Instalar UnitTestAdaptor, Nunit e Selenium)
@@ -59,7 +56,7 @@
 
 # Page Objects
 Padrão de Projeto onde temos manipulação de Objetos através de Elementos da Tabela mapeados com IWebElement, classes genéricas e métodos genéricos.
-![alt text](https://i.imgur.com/R4NdeTI.png)
+![alt text](https://i.imgur.com/HrpyE9u.png)
 
 
 # Data Driven Testing
