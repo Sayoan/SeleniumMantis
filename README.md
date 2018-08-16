@@ -55,7 +55,7 @@
 * Execução dos demais testes
 
 # Page Objects
-Padrão de Projeto onde temos manipulação de Objetos através de Elementos da Tabela mapeados com IWebElement, classes genéricas e métodos genéricos.
+Padrão de Projeto onde temos manipulação de Objetos através de Elementos da Tabela mapeados como IWebElement, classes genéricas e métodos genéricos.
 ![alt text](https://i.imgur.com/Y6Lxiuc.png)
 
 
