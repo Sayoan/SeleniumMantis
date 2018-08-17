@@ -135,7 +135,7 @@ Conteúdo Arquivo HUBConfig.JSON
 ```
 Configurando o Selenium GRID - Nó com arquivo JSON (O arquivo deve estar na pasta que irá executar o comando)
 ```sh
-java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDeafultConfig.json
+java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json
 ```
 Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 ```sh
