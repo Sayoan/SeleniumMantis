@@ -4,7 +4,9 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Remote;
+using ProjetoSomar.SeleniumComum;
 using SeleniumWebDriver.Basics.SeleniumUteis;
 using System;
 using System.Collections.Generic;
@@ -21,60 +23,54 @@ namespace SeleniumWebDriver.Basics
        
         //variável global referente ao driver (navegador)
         public static IWebDriver _driver { get; set; }
-        //swlbase**
 
-        //decoração simbolizando método que executa antes de iniciar o teste
+        
+
         [SetUp]
-        public void SetUpLocal() //NATIVO
-        {
-
-            _driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
-            //ChromeDriver: nativo do selenium, usar path para o driver
-            //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
-
-
-            //Ação que navega para o site
-            _driver.Navigate().GoToUrl("http://mantis-prova.base2.com.br/");
-
-            //Ação que maximiza a tela
-            _driver.Manage().Window.Maximize();
-        }
-
-        //[SetUp]
         public void SetUpGrid() //GRID
         {
             //criado um appconfig com a configuração desejada
             string navegador = ConfigurationManager.AppSettings["NavegadorDefault"].ToString();
             string nodeURL = ConfigurationManager.AppSettings["IpHub"].ToString();
+            string local = ConfigurationManager.AppSettings["Local"].ToString();
 
-            switch (navegador)
+            switch (local)
             {
-                case ("firefox"):
-                    FirefoxOptions firefox = new FirefoxOptions();
-                    _driver = new RemoteWebDriver(new Uri(nodeURL), firefox.ToCapabilities());
-                 break;
+                case ("true"): //rodar local
+                    _driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
+                    //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
 
-                case ("chrome"):
-                    ChromeOptions chrome = new ChromeOptions();
-                    _driver = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
-                  break;
-
-                case ("ie"):
-                    InternetExplorerOptions ie = new InternetExplorerOptions();
-                    _driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
                     break;
 
+                case ("false"): //rodar grid
+                    switch (navegador)
+                    {
+                        case ("firefox"):
+                            FirefoxOptions firefox = new FirefoxOptions();
+                            _driver = new RemoteWebDriver(new Uri(nodeURL), firefox.ToCapabilities());
+                            break;
+
+                        case ("chrome"):
+                            ChromeOptions chrome = new ChromeOptions();
+                            _driver = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
+                            break;
+
+                        case ("ie"):
+                            InternetExplorerOptions ie = new InternetExplorerOptions();
+                            _driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
+                            break;
+
+                    }
+                    break;
+
+
+                    
             }
-            
-                           
-
-
-
-            //Ação que navega para o site
-            _driver.Navigate().GoToUrl("http://mantis-prova.base2.com.br/");
+            _driver.Navigate().GoToUrl(Credentials.URL);
 
             //Ação que maximiza a tela
             _driver.Manage().Window.Maximize();
+
         }
 
 

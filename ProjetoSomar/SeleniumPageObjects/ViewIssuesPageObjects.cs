@@ -192,14 +192,11 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
             SeleniumMaps Maps = new SeleniumMaps();
             WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
-            //espera.Until(ExpectedConditions.ElementToBeClickable(ltCategory));
-            //método try catch para validar se foi possível acessar a tela inicial
+              //método try catch para validar se foi possível acessar a tela inicial
             try
             {
 
-                //Assert.AreEqual("Reporter:", ltReporter.Text);
-                //Assert.AreEqual("Reporter:", _driver.FindElement(By.Id("reporter_id_filter")).Text);
-                Maps.VerificarItem(ltReporter, "Reporter:", "");
+                    Maps.VerificarItem(ltReporter, "Reporter:", "");
             }
             catch (Exception e)
             {
@@ -230,13 +227,7 @@ namespace ProjetoSomar.SeleniumPageObjects
 
             try
             {
-                //if (NIssues < 1) //quando tiver só um
-                //{
-                //    String x = "";
-                //    //Não existem issues
-                //    Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(true);
-                //}
-                //else 
+             
                 if (NIssues == 1) //quando tiver só um
                 {
                     //primeira linha é diferente 
