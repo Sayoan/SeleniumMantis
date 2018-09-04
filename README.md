@@ -181,7 +181,54 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 ```
 # Configuração do WebDriver com o RemoteWebDriver 
 Configurar via AppConfig a key responsável pelo NavegadorDefault e IpHub.
-![alt text](https://i.imgur.com/l73Ilqv.png)
+```
+[SetUp]
+        public void SetUpGrid() //GRID
+        {
+            //criado um appconfig com a configuração desejada
+            string navegador = ConfigurationManager.AppSettings["NavegadorDefault"].ToString();
+            string nodeURL = ConfigurationManager.AppSettings["IpHub"].ToString();
+            string local = ConfigurationManager.AppSettings["Local"].ToString();
+
+            switch (local)
+            {
+                case ("true"): //rodar local
+                    _driver = new ChromeDriver(SeleniumUteis.SeleniumUteis.getPathSeleniumDriver());
+                  
+
+                    break;
+
+                case ("false"): //rodar grid
+                    switch (navegador)
+                    {
+                        case ("firefox"):
+                            FirefoxOptions firefox = new FirefoxOptions();
+                            _driver = new RemoteWebDriver(new Uri(nodeURL), firefox.ToCapabilities());
+                            break;
+
+                        case ("chrome"):
+                            ChromeOptions chrome = new ChromeOptions();
+                            _driver = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
+                            break;
+
+                        case ("ie"):
+                            InternetExplorerOptions ie = new InternetExplorerOptions();
+                            _driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
+                            break;
+
+                    }
+                    break;
+
+
+                    
+            }
+            _driver.Navigate().GoToUrl(Credentials.URL);
+
+            //Ação que maximiza a tela
+            _driver.Manage().Window.Maximize();
+
+        }
+```
 
 
 Agradecimentos: [Saymon Oliveira](https://github.com/saymowan)
