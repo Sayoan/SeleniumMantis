@@ -20,7 +20,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Login_VerificarLogin()
         {
           
@@ -32,7 +32,7 @@ namespace ProjetoSomar.SeleniumTests
 
         }
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Login_VerificarLoginFalha()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -41,7 +41,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Login_VerificarLostPassword()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -50,7 +50,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Login_VerificarPerderSenha()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();

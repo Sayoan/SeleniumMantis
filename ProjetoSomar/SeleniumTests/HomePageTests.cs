@@ -34,7 +34,7 @@ namespace ProjetoSomar.SeleniumTests
 
         }
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_EscolherProjetoTodos()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -48,7 +48,7 @@ namespace ProjetoSomar.SeleniumTests
 
         }
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_VerificaLogout()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -65,7 +65,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_EscolherProjetoSayoan()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -81,7 +81,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_VerificaAcessoViewIssues()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -100,7 +100,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_VerificaAcessoMyView()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -122,7 +122,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_VerificaAcessoSummary()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -144,7 +144,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_VerificaAcessoManage()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -166,7 +166,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_VerificaAcessoMyAccount()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -188,7 +188,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Home_Verificar_ID_Vazio()
         {
             HomePageObjects homePageObjects = new HomePageObjects();

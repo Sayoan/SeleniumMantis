@@ -16,7 +16,7 @@ namespace ProjetoSomar.SeleniumTests
     class ManageTests : WebDriver
     {
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Manage_CriarCategoria_Vazia()
         {
             //falta assert
@@ -39,7 +39,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Manage_CriarCategoriaDuplicada()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();

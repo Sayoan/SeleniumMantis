@@ -15,7 +15,7 @@ namespace ProjetoSomar.SeleniumTests
     {
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void ViewIssues_FiltrarTarefaPriority()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -37,7 +37,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void ViewIssues_FiltrarTarefaSeverity()
         {
             HomePageObjects homePageObjects = new HomePageObjects();

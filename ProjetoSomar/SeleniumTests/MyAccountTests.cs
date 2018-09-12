@@ -18,7 +18,7 @@ namespace ProjetoSomar.SeleniumTests
     {
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_VerificaAcessoPreferences()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -41,7 +41,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_VerificaAcessoManage()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -64,7 +64,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_VerificaAcessoProfiles()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -87,7 +87,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_ValidacaoProfiles_ObrigatoriedadeParametros1()
         {
             //PLATFORM VAZIO
@@ -117,7 +117,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_ValidacaoProfiles_ObrigatoriedadeParametros2()
         {
             //OS VAZIO
@@ -145,7 +145,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_ValidacaoProfiles_ObrigatoriedadeParametros3()
         {
             //OSBUILD VAZIO
@@ -172,7 +172,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_InserirProfile()
         {
             //OSBUILD VAZIO
@@ -200,7 +200,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_InserirProfile_Editar()
         {
             //OSBUILD VAZIO
@@ -236,7 +236,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_InserirProfile_MakeDefault()
         {
             //OSBUILD VAZIO
@@ -279,7 +279,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void MyAccount_InserirProfile_Excluir()
         {
             //OSBUILD VAZIO

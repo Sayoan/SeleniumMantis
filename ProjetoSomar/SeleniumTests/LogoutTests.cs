@@ -16,7 +16,7 @@ namespace ProjetoSomar.SeleniumTests
     class LogoutTests : WebDriver
     {
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void LostPassword_UserNameVazio_EmailPreenchidoValido()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -30,7 +30,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void LostPassword_UserNameVazio_EmailPreenchidoInvalido()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -44,7 +44,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void LostPassword_UserNameVazio_EmailVazio()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -58,7 +58,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void LostPassword_UserNameValido_EmailVazio()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -72,7 +72,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void LostPassword_UserNameValido_EmailValido()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
@@ -87,7 +87,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void LostPassword_RetornarLogin()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();

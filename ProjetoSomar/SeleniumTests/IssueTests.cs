@@ -21,7 +21,7 @@ namespace ProjetoSomar.SeleniumTests
     {
                
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_AlterarStatus()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -47,7 +47,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_AtribuirTarefa()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -79,7 +79,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_AlterarResolution()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -104,7 +104,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_FecharTarefaDuplicada()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -133,7 +133,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_FecharTarefa()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -160,7 +160,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_AlterarStatusFeedback()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -188,7 +188,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_FecharTarefaSemReproducao()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -220,7 +220,7 @@ namespace ProjetoSomar.SeleniumTests
         
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_AlterarPriority()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -251,7 +251,7 @@ namespace ProjetoSomar.SeleniumTests
        
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_BuscarIssueInexistente()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -274,7 +274,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_InsertIssuee_VerificaID()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -324,7 +324,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_VerificaAcessoReportIssue()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -343,7 +343,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_VerificarCampoObrigatorio()
         {
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
@@ -396,7 +396,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
             public void Issue_GerarPermalink()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -417,7 +417,7 @@ namespace ProjetoSomar.SeleniumTests
         }
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_FiltrarSemRetorno()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -441,7 +441,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_ExclusaoTotal()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
@@ -473,7 +473,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
         [Test]
-        [Category("Revisados")]
+        [Category("CT")]
         public void Issue_AtribuirSayoan()
         {
             HomePageObjects homePageObjects = new HomePageObjects();
