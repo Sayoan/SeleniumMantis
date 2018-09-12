@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace ProjetoSomar.SeleniumPageObjects
     {
         public MyViewPageObjects()
         {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
 
         [FindsBy(How = How.LinkText, Using = "Unassigned")]
@@ -27,7 +28,7 @@ namespace ProjetoSomar.SeleniumPageObjects
          public void VerificaAcessoMyView()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             //espera.Until(ExpectedConditions.ElementToBeClickable(ltCategory));
             //método try catch para validar se foi possível acessar a tela inicial
             try

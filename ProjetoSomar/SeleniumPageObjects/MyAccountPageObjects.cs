@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumComum;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
 {
         public MyAccountPageObjects()
         {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
 
         [FindsBy(How = How.LinkText, Using = "My Account")]
@@ -88,7 +89,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public string InserirProfile_Validar()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             GerarRandom gerarRandom = new GerarRandom();
             String conteudo = gerarRandom.RandomString();
             //método try catch para validar se foi possível acessar a tela inicial
@@ -112,7 +113,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public String EditarProfile()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             GerarRandom gerarRandom = new GerarRandom();
             String conteudo = gerarRandom.RandomString();
             //método try catch para validar se foi possível acessar a tela inicial
@@ -141,7 +142,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public String MakeDefault()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             GerarRandom gerarRandom = new GerarRandom();
             String conteudo = gerarRandom.RandomString();
             //método try catch para validar se foi possível acessar a tela inicial
@@ -149,7 +150,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             {
                 // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
                 //Maps.ClicarBotao(rBMakeDefault);
-                _driver.FindElement(By.XPath("(//input[@name='action'])[3]")).Click();
+                DriverFactory.INSTANCE.FindElement(By.XPath("(//input[@name='action'])[3]")).Click();
                 
                 Maps.ClicarBotao(btSubmit);
 
@@ -167,7 +168,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificarInsercao(String conteudo)
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -187,7 +188,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void Excluir()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -208,7 +209,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificarExclusao(String conteudo)
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
              Maps.CBClick_ElementoAusente(cbProfile, "", conteudo);
@@ -221,7 +222,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificarAcessoAbaMyAccount()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -241,7 +242,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void AcessarPreferences()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -262,7 +263,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificaAcessoPreferences()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -284,7 +285,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void AcessarManageColumns()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -305,7 +306,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificaAcessoManageColumns()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -328,7 +329,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void AcessarProfiles()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -349,7 +350,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificaAcessoProfiles()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -371,7 +372,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificaCampoObrigatorioPlatform()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -391,7 +392,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificaCampoObrigatorioOs()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -411,7 +412,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void VerificaCampoObrigatorioOsBuild()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -431,7 +432,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void BotaoSubmeter()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -452,7 +453,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void PreencheParametros1()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -477,7 +478,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void PreencheParametros2()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -499,7 +500,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void PreencheParametros3()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try

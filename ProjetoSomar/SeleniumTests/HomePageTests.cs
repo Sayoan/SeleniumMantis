@@ -6,6 +6,7 @@ using ProjetoSomar.SeleniumUteis;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.ProjetoAll);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
 
         }
@@ -73,7 +74,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
             homePageObjects.VerificaProjeto();
 
 
@@ -91,7 +92,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaViewIssue();
             viewIssuesPageObjects.VerificaAcessoViewIssues();
@@ -111,7 +112,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyView();
             myViewPageObjects.VerificaAcessoMyView();
@@ -133,7 +134,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaSummary();
             summaryPageObjects.AcessarAbaSummary();
@@ -155,7 +156,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaManage();
             managePageObjects.VerificarAccessoAbaManage();
@@ -177,7 +178,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.VerificarAcessoAbaMyAccount();
@@ -198,7 +199,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
             homePageObjects.VerificaProjeto();
 
             homePageObjects.ProcurarIssue_Vazia();

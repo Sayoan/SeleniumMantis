@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumComum;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public ViewIssuesPageObjects()
          {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
 
 
@@ -167,7 +168,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void VerificarInsercao_Issue()
         {
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             SeleniumMaps Maps = new SeleniumMaps();
             HomePageObjects homePageObjects = new HomePageObjects();
             
@@ -191,7 +192,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void VerificaAcessoViewIssues()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
               //método try catch para validar se foi possível acessar a tela inicial
             try
             {
@@ -208,7 +209,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void SelecionarTudo()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             //método try catch para validar se foi possível acessar a tela inicial
             int indice = 2;
 
@@ -244,7 +245,7 @@ namespace ProjetoSomar.SeleniumPageObjects
                     //percorre procurando um a um
                     while (indice < NIssues)
                     {
-                        _driver.FindElement(By.XPath("(//input[@name='bug_arr[]'])[" + indice + "]")).Click();
+                        DriverFactory.INSTANCE.FindElement(By.XPath("(//input[@name='bug_arr[]'])[" + indice + "]")).Click();
                         indice++;
                     }
                     
@@ -262,7 +263,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void VerificaZero()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             String tamanho = txtQuantidadeIssues.Text;
             String[] parts = tamanho.Split('/'); //separar em relação ao '/'
@@ -287,7 +288,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void Excluir()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
 
             Maps.CBClick(cbActionsIssues, "action", "Delete");
@@ -298,7 +299,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void VerificaAtribuicaoSayoan()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
 
             Maps.VerificarItem(txtVerificaAssignSayoan, "sayoan.oliveira", "");
@@ -307,7 +308,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void AtribuirSayoan()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
 
             Maps.CBClick(cbActionsIssues, "action", "Assign");
@@ -322,14 +323,14 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void VerificaPermalink()
     {
         SeleniumMaps Maps = new SeleniumMaps();
-        WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+        WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
         //método try catch para validar se foi possível acessar a tela inicial
             try
             {
                 //trocar de aba
-                var browserTabs = _driver.WindowHandles;
-                _driver.SwitchTo().Window(browserTabs[1]);
+                var browserTabs = DriverFactory.INSTANCE.WindowHandles;
+                DriverFactory.INSTANCE.SwitchTo().Window(browserTabs[1]);
                 Maps.VerificarItem(txtPermalink2, "Create Short Link", "");
 
 
@@ -344,7 +345,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void AcessarPermalink()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -367,7 +368,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void FiltrarSemRetorno()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try

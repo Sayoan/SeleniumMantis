@@ -4,6 +4,7 @@ using ProjetoSomar.SeleniumPageObjects;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -22,7 +23,7 @@ namespace ProjetoSomar.SeleniumTests
             LogoutPageObjects logoutPageObjects = new LogoutPageObjects();
             loginPageObjects.AcessarLostPassword();
             logoutPageObjects.VerificarLostPassword();
-            logoutPageObjects.InserirUserName_Email(Credentials.Email, "");
+            logoutPageObjects.InserirUserName_Email(ConfigurationManager.AppSettings["Email"].ToString(), "");
             logoutPageObjects.VerificarFeedbackErro2();
 
 
@@ -64,7 +65,7 @@ namespace ProjetoSomar.SeleniumTests
             LogoutPageObjects logoutPageObjects = new LogoutPageObjects();
             loginPageObjects.AcessarLostPassword();
             logoutPageObjects.VerificarLostPassword();
-            logoutPageObjects.InserirUserName_Email("", Credentials.Username);
+            logoutPageObjects.InserirUserName_Email("", ConfigurationManager.AppSettings["Username"].ToString());
             logoutPageObjects.VerificarFeedbackErro1();
 
 
@@ -78,7 +79,7 @@ namespace ProjetoSomar.SeleniumTests
             LogoutPageObjects logoutPageObjects = new LogoutPageObjects();
             loginPageObjects.AcessarLostPassword();
             logoutPageObjects.VerificarLostPassword();
-            logoutPageObjects.InserirUserName_Email(Credentials.Email, Credentials.Username);
+            logoutPageObjects.InserirUserName_Email(ConfigurationManager.AppSettings["Email"].ToString(), ConfigurationManager.AppSettings["Username"].ToString());
             logoutPageObjects.VerificarEmailEnviado();
 
 

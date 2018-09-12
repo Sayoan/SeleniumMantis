@@ -32,6 +32,7 @@ namespace ProjetoSomar.SeleniumTests
             viewIssuesPageObjects.VerificarAcessoFiltrar();
             viewIssuesPageObjects.FiltrarIssue_Prioridade("urgent");
             viewIssuesPageObjects.ValidacaoFiltroTarefa_Priority("urgent");
+            Assert.Pass();
             
         }
 

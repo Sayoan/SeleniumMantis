@@ -6,6 +6,7 @@ using ProjetoSomar.SeleniumUteis;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarPreferences();
@@ -52,7 +53,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarManageColumns();
@@ -75,7 +76,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -99,7 +100,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -129,7 +130,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -157,7 +158,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -183,7 +184,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -214,7 +215,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -252,7 +253,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
@@ -295,7 +296,7 @@ namespace ProjetoSomar.SeleniumTests
             loginPageObjects.Login();
 
             homePageObjects.VerificarAcessaLogin();
-            homePageObjects.EscolherProjeto(Credentials.Projeto);
+            homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();

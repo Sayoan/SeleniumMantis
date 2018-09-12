@@ -5,6 +5,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumUteis;
 using ProjetoSomar.SeleniumComum;
+using System.Configuration;
+using SeleniumMantis.SeleniumComum;
 
 namespace Test
 {
@@ -12,7 +14,7 @@ namespace Test
     {
         public HomePageObjects()
         {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
 
 
@@ -70,12 +72,12 @@ namespace Test
         public void VerificaProjeto()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                Maps.CBClick(cbProjeto, "", Credentials.Projeto);
+                Maps.CBClick(cbProjeto, "", ConfigurationManager.AppSettings["Projeto"].ToString());
                 //NUnit.Framework.Assert.AreEqual("Sayoan Oliveira's", _driver.FindElement(By.Name("project_id")).Text);
 
             }
@@ -89,7 +91,7 @@ namespace Test
         public void EscolherProjeto(String projeto)
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -108,7 +110,7 @@ namespace Test
         public void AcessarAbaReportIssue()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -126,7 +128,7 @@ namespace Test
         public void AcessarAbaSummary()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -144,7 +146,7 @@ namespace Test
         public void VerificarAcessaLogin()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -163,7 +165,7 @@ namespace Test
         public void AcessarAbaViewIssue()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try
@@ -182,7 +184,7 @@ namespace Test
         public void AcessarAbaManage()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try

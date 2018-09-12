@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumComum;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -95,7 +96,7 @@ namespace Test
 
         public ReportIssuesPageObjects()
         {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
 
        
@@ -104,7 +105,7 @@ namespace Test
         public void VerificarAcessaReportIssue()
         {
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             SeleniumMaps Maps = new SeleniumMaps();
             HomePageObjects homePageObjects = new HomePageObjects();
             //veriricar espera
@@ -124,7 +125,7 @@ namespace Test
         public void VerificarDefaultProfile(String conteudo)
         {
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             SeleniumMaps Maps = new SeleniumMaps();
             HomePageObjects homePageObjects = new HomePageObjects();
             //veriricar espera
@@ -146,7 +147,7 @@ namespace Test
         public void VerificarCampoObrigatorio()
         {
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             SeleniumMaps Maps = new SeleniumMaps();
             //veriricar espera
 
@@ -175,7 +176,7 @@ namespace Test
 
         public void InserirTarefa()
         {
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
 
 
@@ -196,16 +197,16 @@ namespace Test
 
 
 
-            _driver.FindElement(By.XPath("(//input[@name='view_state'])[2]")).Click();
-            _driver.FindElement(By.Name("view_state")).Click();
-            _driver.FindElement(By.XPath("//input[@value='Submit Report']")).Click();
+            DriverFactory.INSTANCE.FindElement(By.XPath("(//input[@name='view_state'])[2]")).Click();
+            DriverFactory.INSTANCE.FindElement(By.Name("view_state")).Click();
+            DriverFactory.INSTANCE.FindElement(By.XPath("//input[@value='Submit Report']")).Click();
 
 
         }
 
         public String InserirTarefa_RetornoSummary()
         {
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             GerarRandom gerarRandom = new GerarRandom();
             String summary = gerarRandom.RandomString();
@@ -231,7 +232,7 @@ namespace Test
 
         public void InserirIssue_Simple(string category, string reproducibility, string severity, string priority, string summary, string description)
         {
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             
 
@@ -254,9 +255,9 @@ namespace Test
             Maps.PreencherCampo(tfAdditional, "additional_info", "teste4");
 
 
-            _driver.FindElement(By.XPath("(//input[@name='view_state'])[2]")).Click();
-            _driver.FindElement(By.Name("view_state")).Click();
-            _driver.FindElement(By.XPath("//input[@value='Submit Report']")).Click();
+            DriverFactory.INSTANCE.FindElement(By.XPath("(//input[@name='view_state'])[2]")).Click();
+            DriverFactory.INSTANCE.FindElement(By.Name("view_state")).Click();
+            DriverFactory.INSTANCE.FindElement(By.XPath("//input[@value='Submit Report']")).Click();
 
             
         }
@@ -268,7 +269,7 @@ namespace Test
         {
             //Após inserir uma issue aparece uma tela rapidamente informando o ID da issue
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -282,7 +283,7 @@ namespace Test
                 Maps.ClicarBotao(btPicFilter, "");
 
 
-                String URL = _driver.Url; //pegar a URL 
+                String URL = DriverFactory.INSTANCE.Url; //pegar a URL 
                 ID = URL.Substring(URL.Length - 4); //tratamento da URL que contem o ID
 
 
@@ -308,7 +309,7 @@ namespace Test
         {
             //Após inserir uma issue aparece uma tela rapidamente informando o ID da issue
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -338,7 +339,7 @@ namespace Test
         {
             //Após inserir uma issue aparece uma tela rapidamente informando o ID da issue
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 

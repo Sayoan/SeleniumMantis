@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,14 @@ namespace ProjetoSomar.SeleniumUteis
         public SeleniumMaps() 
         {
 
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
 
         }
         public void ClicarBotao(IWebElement iwebelement, String label)
         {
             try
             {
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                 iwebelement.Click();
             }
@@ -39,7 +40,7 @@ namespace ProjetoSomar.SeleniumUteis
         {
             try
             {
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                 iwebelement.Click();
             }
@@ -56,7 +57,7 @@ namespace ProjetoSomar.SeleniumUteis
         {
             try
             {
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                 iwebelement.Clear();
                 iwebelement.SendKeys(text);
@@ -73,7 +74,7 @@ namespace ProjetoSomar.SeleniumUteis
         {
             try
             {
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                
                
@@ -95,7 +96,7 @@ namespace ProjetoSomar.SeleniumUteis
         public void CBClick_ElementoAusente(IWebElement iwebelement, String label, String text)
         {
             
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
 
 
@@ -128,7 +129,7 @@ namespace ProjetoSomar.SeleniumUteis
         {
             try
             {
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                 NUnit.Framework.Assert.AreEqual(text, iwebelement.Text);
             }

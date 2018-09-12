@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
     class SummaryPageObjects : WebDriver { 
         public SummaryPageObjects()
     {
-        PageFactory.InitElements(WebDriver._driver, this);
+        PageFactory.InitElements(DriverFactory.INSTANCE, this);
     }
 
         [FindsBy(How = How.XPath, Using = "//table[3]/tbody/tr/td")]
@@ -24,7 +25,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
         public void AcessarAbaSummary()
         {
             SeleniumMaps Maps = new SeleniumMaps();
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(5));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
             try

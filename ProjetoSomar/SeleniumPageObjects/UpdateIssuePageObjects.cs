@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public UpdateIssuePageObjects()
         {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
 
 
@@ -69,7 +70,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
             
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -93,41 +94,13 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         }
 
-        public void InserirMonitor(String monitor)
-        {
-
-            
-
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
-            String ID = "";
-
-            try
-            {
-
-                Maps.PreencherCampo(tfUsername, monitor, "");
-                Maps.ClicarBotao(btAdd);
-                Assert.AreEqual(monitor, _driver.FindElement(By.LinkText(monitor)).Text);
-
-
-
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
-
-
-        }
+        
         
             public void AlterarPriority(String status)
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -157,7 +130,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -185,7 +158,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -212,7 +185,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -242,7 +215,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -270,7 +243,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -295,7 +268,7 @@ namespace ProjetoSomar.SeleniumPageObjects
             {
 
 
-                WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
                 SeleniumMaps Maps = new SeleniumMaps();
                 String ID = "";
 
@@ -325,7 +298,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             String ID = "";
 
@@ -356,7 +329,7 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
 
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             
 
@@ -379,7 +352,7 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public void VerificaStatus(String status)
         {
-            WebDriverWait espera = new WebDriverWait(WebDriver._driver, TimeSpan.FromSeconds(3));
+            WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
             
             Maps.VerificarItem(txtStatus, status, "");

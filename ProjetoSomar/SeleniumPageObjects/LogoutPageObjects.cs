@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace ProjetoSomar.SeleniumPageObjects
     {
         public LogoutPageObjects()
         {
-            PageFactory.InitElements(WebDriver._driver, this);
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
         }
         [FindsBy(How = How.ClassName, Using = "form-title")]
         public IWebElement txtLostPassword { get; set; }
