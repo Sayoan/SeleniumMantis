@@ -54,7 +54,7 @@ namespace ProjetoSomar.SeleniumTests
             viewIssuesPageObjects.VerificarAcessoFiltrar();
             viewIssuesPageObjects.FiltrarIssue_Severity("trivial");
             viewIssuesPageObjects.ValidacaoFiltroTarefa_Severity("trivial");
-
+            Assert.Pass();
         }
 
 

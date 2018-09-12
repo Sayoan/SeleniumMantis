@@ -35,7 +35,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarPreferences();
             myAccountPageObjects.VerificaAcessoPreferences();
-
+            Assert.Pass();
 
 
         }
@@ -58,7 +58,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarManageColumns();
             myAccountPageObjects.VerificaAcessoManageColumns();
-
+            Assert.Pass();
 
 
         }
@@ -81,7 +81,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.AcessarProfiles();
             myAccountPageObjects.VerificaAcessoProfiles();
-
+            Assert.Pass();
 
 
         }
@@ -108,7 +108,7 @@ namespace ProjetoSomar.SeleniumTests
             myAccountPageObjects.PreencheParametros1();
             myAccountPageObjects.BotaoSubmeter();
             myAccountPageObjects.VerificaCampoObrigatorioPlatform();
-
+            Assert.Pass();
 
 
 
@@ -138,7 +138,7 @@ namespace ProjetoSomar.SeleniumTests
             myAccountPageObjects.PreencheParametros2();
             myAccountPageObjects.BotaoSubmeter();
             myAccountPageObjects.VerificaCampoObrigatorioOs();
-
+            Assert.Pass();
 
 
         }
@@ -166,7 +166,7 @@ namespace ProjetoSomar.SeleniumTests
             myAccountPageObjects.PreencheParametros3();
             myAccountPageObjects.BotaoSubmeter();
             myAccountPageObjects.VerificaCampoObrigatorioOsBuild();
-
+            Assert.Pass();
 
 
         }
@@ -193,7 +193,7 @@ namespace ProjetoSomar.SeleniumTests
             myAccountPageObjects.BotaoSubmeter();
             conteudo = conteudo + " " + conteudo + " " + conteudo;
             myAccountPageObjects.VerificarInsercao(conteudo);
-            
+            Assert.Pass();
 
 
 
@@ -228,7 +228,7 @@ namespace ProjetoSomar.SeleniumTests
             conteudo = myAccountPageObjects.EditarProfile();
             conteudo = conteudo + " " + conteudo + " " + conteudo;
             myAccountPageObjects.VerificarInsercao(conteudo);
-
+            Assert.Pass();
 
 
 
@@ -269,8 +269,8 @@ namespace ProjetoSomar.SeleniumTests
             reportIssuesPageObjects.VerificarAcessaReportIssue();
 
             //vai lá na report e ve se tornou default
-            reportIssuesPageObjects.VerificarDefaultProfile(conteudo); 
-
+            reportIssuesPageObjects.VerificarDefaultProfile(conteudo);
+            Assert.Pass();
 
 
 
@@ -309,9 +309,9 @@ namespace ProjetoSomar.SeleniumTests
 
             myAccountPageObjects.Excluir(); 
             myAccountPageObjects.VerificarExclusao(conteudo);
+            Assert.Pass();
 
 
-           
 
 
 

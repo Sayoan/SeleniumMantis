@@ -44,7 +44,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.VerificarAcessaLogin();
             homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
-
+            NUnit.Framework.Assert.Pass();
 
         }
         [Test]
@@ -59,7 +59,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.VerificarAcessaLogin();
             homePageObjects.Logout();
             loginPageObjects.VerificaAcessoLogin();
-
+            NUnit.Framework.Assert.Pass();
 
 
         }
@@ -76,7 +76,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.VerificarAcessaLogin();
             homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
             homePageObjects.VerificaProjeto();
-
+            NUnit.Framework.Assert.Pass();
 
         }
 
@@ -96,7 +96,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaViewIssue();
             viewIssuesPageObjects.VerificaAcessoViewIssues();
-            
+            NUnit.Framework.Assert.Pass();
         }
 
         [Test]
@@ -116,8 +116,8 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaMyView();
             myViewPageObjects.VerificaAcessoMyView();
+            NUnit.Framework.Assert.Pass();
 
-            
 
         }
 
@@ -138,7 +138,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaSummary();
             summaryPageObjects.AcessarAbaSummary();
-
+            NUnit.Framework.Assert.Pass();
 
 
         }
@@ -160,7 +160,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaManage();
             managePageObjects.VerificarAccessoAbaManage();
-
+            NUnit.Framework.Assert.Pass();
 
 
         }
@@ -182,7 +182,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaMyAccount();
             myAccountPageObjects.VerificarAcessoAbaMyAccount();
-
+            NUnit.Framework.Assert.Pass();
 
 
         }
@@ -204,7 +204,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.ProcurarIssue_Vazia();
             homePageObjects.Verifica_IssueVazia();
-
+            NUnit.Framework.Assert.Pass();
 
 
 

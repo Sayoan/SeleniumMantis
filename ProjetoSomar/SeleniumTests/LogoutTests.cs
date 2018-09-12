@@ -25,7 +25,7 @@ namespace ProjetoSomar.SeleniumTests
             logoutPageObjects.VerificarLostPassword();
             logoutPageObjects.InserirUserName_Email(ConfigurationManager.AppSettings["Email"].ToString(), "");
             logoutPageObjects.VerificarFeedbackErro2();
-
+            Assert.Pass();
 
         }
 
@@ -39,7 +39,7 @@ namespace ProjetoSomar.SeleniumTests
             logoutPageObjects.VerificarLostPassword();
             logoutPageObjects.InserirUserName_Email("","");
             logoutPageObjects.VerificarFeedbackErro1();
-
+            Assert.Pass();
 
         }
 
@@ -53,7 +53,7 @@ namespace ProjetoSomar.SeleniumTests
             logoutPageObjects.VerificarLostPassword();
             logoutPageObjects.InserirUserName_Email("","");
             logoutPageObjects.VerificarFeedbackErro1();
-
+            Assert.Pass();
 
         }
 
@@ -67,7 +67,7 @@ namespace ProjetoSomar.SeleniumTests
             logoutPageObjects.VerificarLostPassword();
             logoutPageObjects.InserirUserName_Email("", ConfigurationManager.AppSettings["Username"].ToString());
             logoutPageObjects.VerificarFeedbackErro1();
-
+            Assert.Pass();
 
         }
 
@@ -81,7 +81,7 @@ namespace ProjetoSomar.SeleniumTests
             logoutPageObjects.VerificarLostPassword();
             logoutPageObjects.InserirUserName_Email(ConfigurationManager.AppSettings["Email"].ToString(), ConfigurationManager.AppSettings["Username"].ToString());
             logoutPageObjects.VerificarEmailEnviado();
-
+            Assert.Pass();
 
         }
 
@@ -96,7 +96,7 @@ namespace ProjetoSomar.SeleniumTests
             logoutPageObjects.VerificarLostPassword();
             logoutPageObjects.VoltarLogin();
             loginPageObjects.VerificaAcessoLogin();
-
+            Assert.Pass();
 
 
         }

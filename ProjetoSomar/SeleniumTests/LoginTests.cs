@@ -28,6 +28,7 @@ namespace ProjetoSomar.SeleniumTests
             HomePageObjects homePageObjects = new HomePageObjects();
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
+            Assert.Pass();
 
         }
         [Test]
@@ -36,6 +37,7 @@ namespace ProjetoSomar.SeleniumTests
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             loginPageObjects.WrongLogin();
+            Assert.Pass();
         }
 
         [Test]
@@ -44,6 +46,7 @@ namespace ProjetoSomar.SeleniumTests
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             loginPageObjects.WrongLogin();
+            Assert.Pass();
         }
 
         [Test]
@@ -54,6 +57,7 @@ namespace ProjetoSomar.SeleniumTests
             LogoutPageObjects logoutPageObjects = new LogoutPageObjects();
             loginPageObjects.AcessarLostPassword();
             logoutPageObjects.VerificarLostPassword();
+            Assert.Pass();
         }
 
        

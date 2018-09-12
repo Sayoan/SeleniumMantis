@@ -31,7 +31,7 @@ namespace ProjetoSomar.SeleniumTests
             managePageObjects.VerificarAccessoAbaManage();
             managePageObjects.AcessarManageProjects();
             managePageObjects.InserirCategoriaVazia("");
-            
+            Assert.Pass();
 
 
 
@@ -55,7 +55,7 @@ namespace ProjetoSomar.SeleniumTests
             managePageObjects.VerificarAccessoAbaManage();
             managePageObjects.AcessarManageProjects();
             managePageObjects.InserirCategoriaDuplicada(categoria);
-              
+            Assert.Pass();
 
 
 

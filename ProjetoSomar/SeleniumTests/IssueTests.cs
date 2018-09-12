@@ -73,7 +73,8 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.AtribuirTarefa("sayoan.oliveira");
             updateIssuePageObjects.Atualizar();
             updateIssuePageObjects.VerificaAssign("sayoan.oliveira");
-            
+            Assert.Pass();
+
 
         }
 
@@ -99,6 +100,7 @@ namespace ProjetoSomar.SeleniumTests
 
             updateIssuePageObjects.AlterarResolution("no change required");
             updateIssuePageObjects.Atualizar();
+            Assert.Pass();
         }
 
         [Test]
@@ -127,6 +129,7 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.Atualizar();
 
             updateIssuePageObjects.VerificaStatus("closed");
+            Assert.Pass();
         }
 
         [Test]
@@ -152,6 +155,7 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.Atualizar();
 
             updateIssuePageObjects.VerificaStatus("closed");
+            Assert.Pass();
         }
 
 
@@ -178,6 +182,7 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.AlterarStatus("acknowledged");
             updateIssuePageObjects.Atualizar();
             updateIssuePageObjects.VerificaStatus("acknowledged");
+            Assert.Pass();
 
 
         }
@@ -207,6 +212,7 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.Atualizar();
 
             updateIssuePageObjects.VerificaStatus("closed");
+            Assert.Pass();
         }
 
 
@@ -235,7 +241,7 @@ namespace ProjetoSomar.SeleniumTests
             updateIssuePageObjects.AlterarPriority("urgent");
             updateIssuePageObjects.Atualizar();
             updateIssuePageObjects.VerificaPriority("urgent");
-
+            Assert.Pass();
 
 
         }
@@ -260,7 +266,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.VerificaProjeto();
             homePageObjects.ProcurarIssue(ID);
             homePageObjects.ValidacaoIssueInexiste(ID);
-                                   
+            Assert.Pass();
 
 
 
@@ -285,7 +291,7 @@ namespace ProjetoSomar.SeleniumTests
             String summary = reportIssuesPageObjects.InserirTarefa_RetornoSummary();//Aqui você o sumário inserido
             //neste momento é inserido uma tarefa com uma summary random e ela é retornada para ser utilizada na busca
             String ID = reportIssuesPageObjects.PegarIssueInserida(summary); //Aqui consegue o ID com o sumário
-
+            Assert.Pass();
 
 
         }
@@ -313,7 +319,7 @@ namespace ProjetoSomar.SeleniumTests
 
 
             viewIssuesPageObjects.VerificarInsercao_Issue();
-
+            Assert.Pass();
 
         }
 
@@ -333,6 +339,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.AcessarAbaReportIssue();
 
             reportIssuesPageObjects.VerificarAcessaReportIssue();
+            Assert.Pass();
         }
 
         [Test]
@@ -351,6 +358,7 @@ namespace ProjetoSomar.SeleniumTests
 
             reportIssuesPageObjects.VerificarAcessaReportIssue();
             reportIssuesPageObjects.VerificarCampoObrigatorio();
+            Assert.Pass();
         }
 
        
@@ -383,8 +391,8 @@ namespace ProjetoSomar.SeleniumTests
 
             reportIssuesPageObjects.VerificarAcessaReportIssue();
             reportIssuesPageObjects.InserirIssue_Simple(category, reproducibility, severity, priority, summary, description);
-
-         }
+            Assert.Pass();
+        }
 
 
         [Test]
@@ -403,7 +411,7 @@ namespace ProjetoSomar.SeleniumTests
             viewIssuesPageObjects.VerificaAcessoViewIssues();
             viewIssuesPageObjects.AcessarPermalink(); //Clicar botão Permalink
             viewIssuesPageObjects.VerificaPermalink(); //Trocar de aba e verificar Tela
-
+            Assert.Pass();
 
 
         }
@@ -423,7 +431,7 @@ namespace ProjetoSomar.SeleniumTests
 
             viewIssuesPageObjects.VerificaAcessoViewIssues();
             viewIssuesPageObjects.FiltrarSemRetorno();
-
+            Assert.Pass();
 
 
 
@@ -456,7 +464,7 @@ namespace ProjetoSomar.SeleniumTests
             viewIssuesPageObjects.Excluir();
 
             viewIssuesPageObjects.VerificaZero();
-            
+            Assert.Pass();
 
 
 
@@ -489,7 +497,7 @@ namespace ProjetoSomar.SeleniumTests
             viewIssuesPageObjects.SelecionarTudo();
             viewIssuesPageObjects.AtribuirSayoan();
             viewIssuesPageObjects.VerificaAtribuicaoSayoan();
-
+            Assert.Pass();
 
 
 
