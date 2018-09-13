@@ -52,7 +52,7 @@ namespace ProjetoSomar.SeleniumTests
 
             viewIssuesPageObjects.VerificaAcessoViewIssues();
             viewIssuesPageObjects.FiltrarIssue_Severity("minor");
-            viewIssuesPageObjects.ValidarFiltroSeverity("mior"); 
+            viewIssuesPageObjects.ValidarFiltroSeverity("minor"); 
             Assert.Pass();
         }
 
