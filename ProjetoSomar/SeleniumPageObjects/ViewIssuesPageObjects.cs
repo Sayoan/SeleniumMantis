@@ -97,16 +97,24 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         [FindsBy(How = How.XPath, Using = "//table[@id='buglist']/tbody/tr/td/span")]
         public IWebElement txtQuantidadeIssues { get; set; }
+
+        [FindsBy(How = How.Id, Using = "show_priority_filter")]
+        public IWebElement ltFiltroPriority { get; set; }
+
+        [FindsBy(How = How.Id, Using = "show_severity_filter")]
+        public IWebElement ltFiltroSeverity { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "(.//*[normalize-space(text()) and normalize-space(.)='app_14'])[1]/following::td[1]")]
+        public IWebElement txtFiltroSeverityTabela { get; set; }
         
-        
+
 
 
         public void FiltrarIssue_Prioridade(String prioridade)
         {
 
             SeleniumMaps Maps = new SeleniumMaps();
-
-            //Problemas com o CB, ele não está identificando o objeto
+            Maps.ClicarBotao(ltFiltroPriority, "");
             Maps.CBClick(cbPriority, prioridade, prioridade);
             Maps.ClicarBotao(btFilterPageFilter, ""); 
 
@@ -118,10 +126,19 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
             SeleniumMaps Maps = new SeleniumMaps();
-
-            //Problemas com o CB, ele não está identificando o objeto
+            Maps.ClicarBotao(ltFiltroSeverity, "");
             Maps.CBClick(cbSeverity, "", severity);
             Maps.ClicarBotao(btFilterPageFilter, "");
+
+
+
+        }
+
+        public void ValidarFiltroSeverity(String severity)
+        {
+
+            SeleniumMaps Maps = new SeleniumMaps();
+            Maps.VerificarItem(txtFiltroSeverityTabela, severity, "");
 
 
 

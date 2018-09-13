@@ -40,7 +40,7 @@ namespace ProjetoSomar.SeleniumUteis
         {
             try
             {
-                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(10));
                 espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
                 iwebelement.Click();
             }

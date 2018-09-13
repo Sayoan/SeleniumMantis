@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using ProjetoSomar.SeleniumPageObjects;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections.Generic;
@@ -28,8 +29,7 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaViewIssue();
 
-            viewIssuesPageObjects.AcessoFiltrar();
-            viewIssuesPageObjects.VerificarAcessoFiltrar();
+            viewIssuesPageObjects.VerificaAcessoViewIssues();
             viewIssuesPageObjects.FiltrarIssue_Prioridade("urgent");
             viewIssuesPageObjects.ValidacaoFiltroTarefa_Priority("urgent");
             Assert.Pass();
@@ -50,10 +50,9 @@ namespace ProjetoSomar.SeleniumTests
 
             homePageObjects.AcessarAbaViewIssue();
 
-            viewIssuesPageObjects.AcessoFiltrar();
-            viewIssuesPageObjects.VerificarAcessoFiltrar();
-            viewIssuesPageObjects.FiltrarIssue_Severity("trivial");
-            viewIssuesPageObjects.ValidacaoFiltroTarefa_Severity("trivial");
+            viewIssuesPageObjects.VerificaAcessoViewIssues();
+            viewIssuesPageObjects.FiltrarIssue_Severity("minor");
+            viewIssuesPageObjects.ValidarFiltroSeverity("mior"); 
             Assert.Pass();
         }
 
