@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Remote;
 using SeleniumWebDriver.Basics.SeleniumUteis;
 using System;
@@ -48,10 +50,11 @@ namespace SeleniumMantis.SeleniumComum
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
 
-                            case ("ie"):
-                                // InternetExplorerOptions ie = new InternetExplorerOptions();
-                                //_driver = new RemoteWebDriver(new Uri(nodeURL), ie.ToCapabilities());
-                                //INSTANCE.Manage().Window.Maximize();
+                            case ("opera"):
+                                OperaOptions opera = new OperaOptions();
+                                opera.BinaryLocation = "@" + ConfigurationManager.AppSettings["PatchOperaExe"].ToString(); ;
+                                INSTANCE = new RemoteWebDriver(new Uri(nodeURL), opera.ToCapabilities());
+                                INSTANCE.Manage().Window.Maximize();
                                 break;
 
                             default:
