@@ -1,4 +1,4 @@
-﻿# Configuração Automação - Selenium
+# Configuração Automação - Selenium
  Este projeto tem como principal propósito a prática de Automação envolvendo diversas tecnologias e padrões de desenvolvimento, linguagem C#, Selenium WebDriver e SeleniumGrid. O sistema que foi automatizado foi o Mantis - Bug Tracker.
  
 # Projeto Mantis
@@ -26,8 +26,8 @@
 
   - Visual Studio Enterprise (Instalar UnitTestAdaptor, Nunit e Selenium)
   - Chrome Driver (http://www.seleniumhq.org/download/)
-  - Internet Explorer Driver
   - Firefox Driver(gecko)
+  - Opera Driver
   - Selenium Server
   - Se necessário instalar "NUnit Test Adapter"
    ```Tools -> Extensions And Updates -> Online -> Search for "Nunit Test Adapter" -> Click on "NUnit Test Adapter" in results list -> Click on Download button ```
@@ -43,10 +43,10 @@
 | ------ | ------ |
 | Tests | Classe Mãe de todo o teste, herdando valores da WebDriver e executando as suites de testes |
 | SeleniumUteis | Classe responsável pelo patch do driver (Pode ser substituido por urls estáticas) |
-| WebDriver | Cria o Driver(recebe o patch, aqui ele pode ser estático), navega para URL e amplia a tela, dentro dele é necessário escolher se será local ou através do selenium grid|
+| WebDriver | Classe responsável por executar os métodos implementados para o WebDriver e orquestragem dos métodos do Unit|
+| DriverFactory | Cria o Driver(recebe o patch, aqui ele pode ser estático), navega para URL e amplia a tela, dentro dele é necessário escolher se será local ou através do selenium grid|
 | PageObjects | Classe responsável pelo mapeamento dos elementos da tela e seus métodos|
 | Maps | Classe responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
-| Credentials | Classe responsável por conter crendenciais |
 | GerarRandom | Classe responsável por gerar conteúdo genérico |
 
 # Fluxo de Execução
@@ -66,7 +66,7 @@ Criação de uma função com retorno de uma lista de TestCaseData
 ```sh
 public static List<TestCaseData> InsercaoIssues {}
  ```
- Criação de uma lista de TestCaseData
+ Criação de variável tipada instanciando uma lista de TestCaseData 
  ```sh
  var testCases = new List<TestCaseData>();
 ```
@@ -135,7 +135,7 @@ Conteúdo Arquivo HUBConfig.JSON
 ```
 Configurando o Selenium GRID - Nó com arquivo JSON (O arquivo deve estar na pasta que irá executar o comando)
 ```sh
-java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json
+java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json 
 ```
 Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
 ```sh
@@ -178,6 +178,18 @@ Conteúdo Arquivo NodeDeafultConfig.JSON (JUNIT 3 acima)
   "browserTimeout": 0,
   "timeout": 1800
 }
+```
+É altamente sugerido a criação de .bat para inicialização do Nó e do HUB.
+
+CONTEUDO_NO.BAT
+```sh
+cd C:\chromedriver 
+java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.opera.driver="operadriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -jar seleniumserver.jar -role node -nodeConfig NodeDefaultConfig.json 
+```
+CONTEUDO_HUB.BAT
+```sh
+cd C:\chromedriver 
+java -jar seleniumserver.jar -role hub -hubConfig HubConfig.json
 ```
 # Configuração do WebDriver com o RemoteWebDriver 
 Configurar via AppConfig a key responsável pelo NavegadorDefault e IpHub.
