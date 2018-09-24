@@ -48,6 +48,7 @@
 | PageObjects | Classe responsável pelo mapeamento dos elementos da tela e seus métodos|
 | Maps | Classe responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
 | GerarRandom | Classe responsável por gerar conteúdo genérico |
+| DataDriven | Classe responsável por implementar o DDT |
 
 # Fluxo de Execução
 
@@ -72,14 +73,14 @@ public static List<TestCaseData> InsercaoIssues {}
 ```
 Preenchimento da lista de TesteCaseData com TesteCase 
 ```sh
-var testCase = new TestCaseData(category, reproducibility, severity, priority, summary, description);
+var testCase = new TestCaseData(ArrayList Itemlist);
                                 testCases.Add(testCase);
 ```
 
 Criação do Teste recebendo um TesteCaseSource referente à lista retornada pelo InsercaoIssues e seus parâmetros
 ```sh
 [Category("DataDriven"), TestCaseSource("InsercaoIssues")]
-        public void Issue_DD_InsertSimple(string category, string reproducibility, string severity, string priority, string summary, string description)
+        public void Issue_DD_InsertSimple(ArrayList Itemlist)
         {}
 ```
 
