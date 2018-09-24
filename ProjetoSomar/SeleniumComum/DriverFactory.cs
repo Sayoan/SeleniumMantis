@@ -52,7 +52,7 @@ namespace SeleniumMantis.SeleniumComum
 
                             case ("opera"):
                                 OperaOptions opera = new OperaOptions();
-                                opera.BinaryLocation = "@" + ConfigurationManager.AppSettings["PatchOperaExe"].ToString(); ;
+                                opera.BinaryLocation = "@" + ConfigurationManager.AppSettings["PatchOperaExe"].ToString(); 
                                 INSTANCE = new RemoteWebDriver(new Uri(nodeURL), opera.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;
