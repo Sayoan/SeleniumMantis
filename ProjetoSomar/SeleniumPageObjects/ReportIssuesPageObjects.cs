@@ -239,12 +239,12 @@ namespace Test
             
 
             //dinamico
-            Maps.CBClick(cbCategory, "category_id", (string)Itemlist[0]);
-            Maps.CBClick(cbReproducibility, "reproducibility", (string)Itemlist[1]);
-            Maps.CBClick(cbSeverity, "severity", (string)Itemlist[2]);
-            Maps.CBClick(cbPriority, "priority", (string)Itemlist[3]);
-            Maps.PreencherCampo(tfSummary, "summary", (string)Itemlist[4]);
-            Maps.PreencherCampo(tfdDescription, "description", (string)Itemlist[5]);
+            Maps.CBClick(cbCategory, "category_id", Itemlist[0].ToString());
+            Maps.CBClick(cbReproducibility, "reproducibility", Itemlist[1].ToString());
+            Maps.CBClick(cbSeverity, "severity", Itemlist[2].ToString());
+            Maps.CBClick(cbPriority, "priority", Itemlist[3].ToString());
+            Maps.PreencherCampo(tfSummary, "summary", Itemlist[4].ToString());
+            Maps.PreencherCampo(tfdDescription, "description", Itemlist[5].ToString());
 
             //estático
             
