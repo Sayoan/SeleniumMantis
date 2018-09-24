@@ -98,7 +98,6 @@ namespace Test
                 Maps.PreencherCampo(tfUsername, "username", username);
                 Maps.PreencherCampo(tfPassword, "password", password);
                 Maps.ClicarBotao(btSubmit, "//input[@value='Login']");
-                //Assert.AreEqual("account may be disabled", _driver.FindElement(By.CssSelector("//font")).Text);
                 Maps.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
                
 
@@ -125,7 +124,6 @@ namespace Test
                 Maps.PreencherCampo(tfUsername, "username", username);
                 Maps.PreencherCampo(tfPassword, "password", password);
                 Maps.ClicarBotao(btSubmit, "//input[@value='Login']");
-                //Assert.AreEqual("account may be disabled", _driver.FindElement(By.CssSelector("//font")).Text);
                 Maps.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
 
 

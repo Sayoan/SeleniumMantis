@@ -193,7 +193,6 @@ namespace ProjetoSomar.SeleniumPageObjects{
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
                 Maps.ClicarBotao(rBDelete);
                 Maps.ClicarBotao(btSubmit);
 
@@ -227,8 +226,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.VerificarItem(editAccount, "Edit Account", "");
+               Maps.VerificarItem(editAccount, "Edit Account", "");
                 
             }
             catch (Exception e)
@@ -247,8 +245,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.ClicarBotao(ltPreferences);
+               Maps.ClicarBotao(ltPreferences);
             }
 
 
@@ -268,8 +265,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.ClicarBotao(cbProject);
+              Maps.ClicarBotao(cbProject);
             }
 
 
@@ -290,8 +286,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.ClicarBotao(ltManage);
+               Maps.ClicarBotao(ltManage);
             }
 
 
@@ -311,8 +306,7 @@ namespace ProjetoSomar.SeleniumPageObjects{
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.ClicarBotao(btUpdate);
+               Maps.ClicarBotao(btUpdate);
             }
 
 

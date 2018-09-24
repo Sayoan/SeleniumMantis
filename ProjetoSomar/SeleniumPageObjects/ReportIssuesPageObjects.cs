@@ -7,6 +7,7 @@ using ProjetoSomar.SeleniumUteis;
 using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -230,19 +231,20 @@ namespace Test
             return summary;
         }
 
-        public void InserirIssue_Simple(string category, string reproducibility, string severity, string priority, string summary, string description)
+        public void InserirIssue_Simple(ArrayList Itemlist)
         {
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
             SeleniumMaps Maps = new SeleniumMaps();
+
             
 
             //dinamico
-            Maps.CBClick(cbCategory, "category_id", category);
-            Maps.CBClick(cbReproducibility, "reproducibility", reproducibility);
-            Maps.CBClick(cbSeverity, "severity", severity);
-            Maps.CBClick(cbPriority, "priority", priority);
-            Maps.PreencherCampo(tfSummary, "summary", summary);
-            Maps.PreencherCampo(tfdDescription, "description", description);
+            Maps.CBClick(cbCategory, "category_id", (string)Itemlist[0]);
+            Maps.CBClick(cbReproducibility, "reproducibility", (string)Itemlist[1]);
+            Maps.CBClick(cbSeverity, "severity", (string)Itemlist[2]);
+            Maps.CBClick(cbPriority, "priority", (string)Itemlist[3]);
+            Maps.PreencherCampo(tfSummary, "summary", (string)Itemlist[4]);
+            Maps.PreencherCampo(tfdDescription, "description", (string)Itemlist[5]);
 
             //estático
             

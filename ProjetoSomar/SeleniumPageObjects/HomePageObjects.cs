@@ -240,8 +240,6 @@ namespace Test
                 Maps.LimparCampo(tfBugId);
                 Maps.ClicarBotao(btJump);
           
-                //Assert.AreEqual("A number was expected for bug_id.", _driver.FindElement(By.XPath("//p")).Text);
-
             }
             catch (Exception e)
             {
@@ -256,8 +254,7 @@ namespace Test
           
 
                 Maps.VerificarItem(tfErro, "A number was expected for bug_id.", "");
-                //Assert.AreEqual("A number was expected for bug_id.", _driver.FindElement(By.XPath("//p")).Text);
-
+               
            
         }
 
@@ -270,8 +267,7 @@ namespace Test
 
                 Maps.PreencherCampo(tfBugId, "", ID);
                 Maps.ClicarBotao(btJump);
-                //Assert.AreEqual("A number was expected for bug_id.", _driver.FindElement(By.XPath("//p")).Text);
-
+              
             }
             catch (Exception e)
             {
@@ -287,8 +283,7 @@ namespace Test
                 
                 String texto = "Issue " + ID + " not found.";
                 Maps.VerificarItem(tfErro, texto, "");
-                //Assert.AreEqual("A number was expected for bug_id.", _driver.FindElement(By.XPath("//p")).Text);
-
+                
             }
             catch (Exception e)
             {

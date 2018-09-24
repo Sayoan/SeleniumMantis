@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using ProjetoSomar.SeleniumComum;
 using ProjetoSomar.SeleniumPageObjects;
 using ProjetoSomar.SeleniumUteis;
+using SeleniumMantis.SeleniumComum;
 using SeleniumWebDriver.Basics;
 using System;
 using System.Collections;
@@ -368,31 +369,7 @@ namespace ProjetoSomar.SeleniumTests
  
 
        
-        /// <summary>
-        /// TESTES ENVOLVENDO DD
-        /// Inserir uma tarefa com 6 parâmetros dinâmicos e o restante estático
-        /// </summary>
-        /// 
-
-        [Category("DataDriven"), TestCaseSource("InsercaoIssues")]
-        public void Issue_DD_InsertSimple(string category, string reproducibility, string severity, string priority, string summary, string description)
-        {
-             //receber 6 parâmetros pelo DD e gerar os CT
-            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
-            LoginPageObjects loginPageObjects = new LoginPageObjects();
-            HomePageObjects homePageObjects = new HomePageObjects();
-            
-
-            loginPageObjects.Login();
-            homePageObjects.VerificarAcessaLogin();
-
-            homePageObjects.VerificaProjeto();
-            homePageObjects.AcessarAbaReportIssue();
-
-            reportIssuesPageObjects.VerificarAcessaReportIssue();
-            reportIssuesPageObjects.InserirIssue_Simple(category, reproducibility, severity, priority, summary, description);
-            Assert.Pass();
-        }
+    
 
 
         [Test]
@@ -503,60 +480,44 @@ namespace ProjetoSomar.SeleniumTests
 
 
         }
+        /// <summary>
+        /// TESTES ENVOLVENDO DD
+        /// Inserir uma tarefa com 6 parâmetros dinâmicos e o restante estático
+        /// </summary>
+        /// 
+
+        [Category("DataDriven"), TestCaseSource("InsercaoIssues")]
+        public void Issue_DD_InsertSimple(ArrayList ItemList)
+        {
+            //receber 6 parâmetros pelo DD e gerar os CT
+            ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
+            LoginPageObjects loginPageObjects = new LoginPageObjects();
+            HomePageObjects homePageObjects = new HomePageObjects();
 
 
-      public static List<TestCaseData> InsercaoIssues
+            loginPageObjects.Login();
+            homePageObjects.VerificarAcessaLogin();
+
+            homePageObjects.VerificaProjeto();
+            homePageObjects.AcessarAbaReportIssue();
+
+            reportIssuesPageObjects.VerificarAcessaReportIssue();
+            reportIssuesPageObjects.InserirIssue_Simple(ItemList);
+            Assert.Pass();
+        }
+
+        public static List<TestCaseData> InsercaoIssues
         {
            
             get
             {
-                
-                var testCases = new List<TestCaseData>();
-
-                string[] split = { "" };
-                ArrayList ItemList = new ArrayList();
-                //qq rola, pegando o patch do projeto vem junto "file:/" + "resto do patch"
-                String patch = (Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase))) + @"\input_date.csv");
-                //retirando lixo file:\
-                patch = patch.Remove(0, 6);
-               //arquivo csv tem que estar dentro da pasta do projeto!
-                using (var fs = File.OpenRead(@patch))
-                using (var sr = new StreamReader(fs))
-                {
-                    string line = string.Empty;
-
-                    while (line != null)
-                    {
-                        
-                        line = sr.ReadLine();
-                        if (line != null)
-                        {
-                            split = line.Split(new char[] { ',' }, StringSplitOptions.None);
-                            
-                             string category = split[0].Trim(); //category
-                             string reproducibility = split[1].Trim(); //reproducibility
-                             string severity = split[2].Trim(); //severity
-                             string priority = split[3].Trim(); //priority
-                             string summary = split[4].Trim(); //summary
-                             string description = split[5].Trim(); //description
-                             
-                             string ind_inserir  = split[6].Trim(); //ind_inserir 
-
-                            if (ind_inserir.Equals("S"))
-                            {
-                                var testCase = new TestCaseData(category, reproducibility, severity, priority, summary, description);
-                                testCases.Add(testCase);
-                            }
-
-
-
-                        
-                        }
-                    }
-                }
+                DataDriven datadriven = new DataDriven();
+                var testCases = datadriven.DataDrivenImplement();
                 return testCases;
             }
         }
+
+    
 
       
     }
