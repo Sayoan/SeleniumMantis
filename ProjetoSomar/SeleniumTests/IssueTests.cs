@@ -487,13 +487,12 @@ namespace ProjetoSomar.SeleniumTests
         /// 
 
         [Category("DataDriven"), TestCaseSource("InsercaoIssues")]
-        public void Issue_DD_InsertSimple(ArrayList ItemList)
+        public void Issue_DD_InsertSimple(string category, string reproducibility, string severity, string priority, string summary, string description)
         {
             //receber 6 parâmetros pelo DD e gerar os CT
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             HomePageObjects homePageObjects = new HomePageObjects();
-
 
             loginPageObjects.Login();
             homePageObjects.VerificarAcessaLogin();
@@ -502,7 +501,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.AcessarAbaReportIssue();
 
             reportIssuesPageObjects.VerificarAcessaReportIssue();
-            reportIssuesPageObjects.InserirIssue_Simple(ItemList);
+            reportIssuesPageObjects.InserirIssue_Simple(category, reproducibility, severity, priority, summary, description);
             Assert.Pass();
         }
 

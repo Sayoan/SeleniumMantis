@@ -45,7 +45,7 @@ namespace SeleniumMantis.SeleniumComum
                                 break;
 
                             case ("chrome"):
-                                ChromeOptions chrome = new ChromeOptions();
+                                ChromeOptions chrome = new ChromeOptions();                             
                                 INSTANCE = new RemoteWebDriver(new Uri(nodeURL), chrome.ToCapabilities());
                                 INSTANCE.Manage().Window.Maximize();
                                 break;

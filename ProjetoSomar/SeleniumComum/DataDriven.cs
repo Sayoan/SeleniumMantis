@@ -17,9 +17,8 @@ namespace SeleniumMantis.SeleniumComum
             var testCases = new List<TestCaseData>();
 
             string[] split = { "" };
-            ArrayList ItemList = new ArrayList();
-           
-          
+                
+                      
             using (var fs = File.OpenRead(@getPatchCSV()))
             using (var sr = new StreamReader(fs))
             {
@@ -32,17 +31,19 @@ namespace SeleniumMantis.SeleniumComum
                     if (line != null)
                     {
                         split = line.Split(new char[] { ',' }, StringSplitOptions.None);
-                        //percorre a entrada utilizando o indice do vetor
-                        for(int i = 0; i < split.Length; i++)
-                        {
-                            ItemList.Add(split[i].Trim()); //add na lista
-                        }
 
+                        string category = split[0].Trim(); //category
+                        string reproducibility = split[1].Trim(); //reproducibility
+                        string severity = split[2].Trim(); //severity
+                        string priority = split[3].Trim(); //priority
+                        string summary = split[4].Trim(); //summary
+                        string description = split[5].Trim(); //description
 
-                        if (ItemList.Contains("S"))
+                        string ind_inserir = split[6].Trim(); //ind_inserir 
+                        if (ind_inserir.Equals("S"))
                         {
-                            var testCase = new TestCaseData(ItemList); //criando ct em relação à lista
-                            testCases.Add(testCase); //lista de ct
+                            var testCase = new TestCaseData(category, reproducibility, severity, priority, summary, description);
+                            testCases.Add(testCase);
                         }
 
 
@@ -56,7 +57,7 @@ namespace SeleniumMantis.SeleniumComum
             return testCases;
         }
 
-        public string getPatchCSV()
+        public static string getPatchCSV()
         {
             //qq rola, pegando o patch do projeto vem junto "file:/" + "resto do patch"
             String patch = (Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase))) + @"\input_date.csv");

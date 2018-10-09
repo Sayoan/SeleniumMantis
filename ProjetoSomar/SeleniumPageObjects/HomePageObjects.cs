@@ -78,7 +78,7 @@ namespace Test
             try
             {
                 Maps.CBClick(cbProjeto, "", ConfigurationManager.AppSettings["Projeto"].ToString());
-                //NUnit.Framework.Assert.AreEqual("Sayoan Oliveira's", _driver.FindElement(By.Name("project_id")).Text);
+             
 
             }
             catch (Exception e)
@@ -97,8 +97,7 @@ namespace Test
             try
             {
                 Maps.CBClick(cbProjeto, "project_id", projeto);
-                //NUnit.Framework.Assert.AreEqual("Sayoan Oliveira's", _driver.FindElement(By.Name("project_id")).Text);
-                //PROJETO ESCOLHIDO COM SUCESSO
+                
             }
             catch (Exception e)
             {
@@ -151,9 +150,9 @@ namespace Test
             //método try catch para validar se foi possível acessar a tela inicial
             try
             {
-                //NUnit.Framework.Assert.AreEqual("My View", ltMyView.Text);
+           
                 Maps.VerificarItem(ltMyView, "My View", "");
-               // NUnit.Framework.Assert.AreEqual("My View", _driver.FindElement(By.LinkText("My View")).Text);
+           
             }
             catch (Exception e)
             {
