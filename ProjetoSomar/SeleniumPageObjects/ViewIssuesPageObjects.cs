@@ -113,10 +113,10 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void FiltrarIssue_Prioridade(String prioridade)
         {
 
-            SeleniumMaps Maps = new SeleniumMaps();
-            Maps.ClicarBotao(ltFiltroPriority, "");
-            Maps.CBClick(cbPriority, prioridade, prioridade);
-            Maps.ClicarBotao(btFilterPageFilter, ""); 
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
+            Uteis.ClicarBotao(ltFiltroPriority, "");
+            Uteis.CBClick(cbPriority, prioridade, prioridade);
+            Uteis.ClicarBotao(btFilterPageFilter, ""); 
 
 
 
@@ -125,10 +125,10 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void FiltrarIssue_Severity(String severity)
         {
 
-            SeleniumMaps Maps = new SeleniumMaps();
-            Maps.ClicarBotao(ltFiltroSeverity, "");
-            Maps.CBClick(cbSeverity, "", severity);
-            Maps.ClicarBotao(btFilterPageFilter, "");
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
+            Uteis.ClicarBotao(ltFiltroSeverity, "");
+            Uteis.CBClick(cbSeverity, "", severity);
+            Uteis.ClicarBotao(btFilterPageFilter, "");
 
 
 
@@ -137,8 +137,8 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void ValidarFiltroSeverity(String severity)
         {
 
-            SeleniumMaps Maps = new SeleniumMaps();
-            Maps.VerificarItem(txtFiltroSeverityTabela, severity, "");
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
+            Uteis.VerificarItem(txtFiltroSeverityTabela, severity, "");
 
 
 
@@ -147,9 +147,9 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void ValidacaoFiltroTarefa_Priority (String prioridade)
         {
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
-            Maps.VerificarItem(txtFiltroPriority, prioridade, "");
+            Uteis.VerificarItem(txtFiltroPriority, prioridade, "");
 
 
 
@@ -158,9 +158,9 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void ValidacaoFiltroTarefa_Severity(String severity)
         {
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
-            Maps.VerificarItem(txtFiltroSeverity, severity, "");
+            Uteis.VerificarItem(txtFiltroSeverity, severity, "");
 
 
 
@@ -170,14 +170,14 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void AcessoFiltrar()
         {
 
-            SeleniumMaps Maps = new SeleniumMaps();
-            Maps.ClicarBotao(btFilterPage);
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
+            Uteis.ClicarBotao(btFilterPage);
         }
 
         public void VerificarAcessoFiltrar()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
-            Maps.VerificarItem(btFilterPageFilter,"", "");
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
+            Uteis.VerificarItem(btFilterPageFilter,"", "");
 
         }
 
@@ -186,46 +186,32 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             HomePageObjects homePageObjects = new HomePageObjects();
             
            
-            //veriricar espera
+            
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-
-                //Maps.VerificarItem(ltIssueInserida, data.);
-                //Console.WriteLine(_driver.FindElement(By.LinkText("Report Issue")).Text);
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+          
 
         }
 
         public void VerificaAcessoViewIssues()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
               //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
 
-                    Maps.VerificarItem(ltReporter, "Reporter:", "");
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                    Uteis.VerificarItem(ltReporter, "Reporter:", "");
+           
 
         }
 
         public void SelecionarTudo()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             //método try catch para validar se foi possível acessar a tela inicial
             int indice = 2;
@@ -249,13 +235,13 @@ namespace ProjetoSomar.SeleniumPageObjects
                 if (NIssues == 1) //quando tiver só um
                 {
                     //primeira linha é diferente 
-                    Maps.ClicarBotao(checkboxIssue);
+                    Uteis.ClicarBotao(checkboxIssue);
                 }
                 else if (NIssues > 1)
                 { //quando tiver mais que um
 
                     //primeira linha sempre é diferente 
-                    Maps.ClicarBotao(checkboxIssue);
+                    Uteis.ClicarBotao(checkboxIssue);
 
                     NIssues++;//necessário para escolher o ultimo
 
@@ -279,7 +265,7 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public void VerificaZero()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             String tamanho = txtQuantidadeIssues.Text;
@@ -304,78 +290,67 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public void Excluir()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
 
-            Maps.CBClick(cbActionsIssues, "action", "Delete");
-            Maps.ClicarBotao(btOk);
-            Maps.ClicarBotao(btConfirmDelete);
+            Uteis.CBClick(cbActionsIssues, "action", "Delete");
+            Uteis.ClicarBotao(btOk);
+            Uteis.ClicarBotao(btConfirmDelete);
         }
 
         public void VerificaAtribuicaoSayoan()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
 
-            Maps.VerificarItem(txtVerificaAssignSayoan, "sayoan.oliveira", "");
+            Uteis.VerificarItem(txtVerificaAssignSayoan, "sayoan.oliveira", "");
         }
 
         public void AtribuirSayoan()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
 
-            Maps.CBClick(cbActionsIssues, "action", "Assign");
-            Maps.ClicarBotao(btOk);
+            Uteis.CBClick(cbActionsIssues, "action", "Assign");
+            Uteis.ClicarBotao(btOk);
 
          
-            Maps.CBClick(cbAssign, "assign", "sayoan.oliveira");
-            Maps.ClicarBotao(btConfirmAssign);
+            Uteis.CBClick(cbAssign, "assign", "sayoan.oliveira");
+            Uteis.ClicarBotao(btConfirmAssign);
         }
 
 
         public void VerificaPermalink()
     {
-        SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
         WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
         //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+          
                 //trocar de aba
                 var browserTabs = DriverFactory.INSTANCE.WindowHandles;
                 DriverFactory.INSTANCE.SwitchTo().Window(browserTabs[1]);
-                Maps.VerificarItem(txtPermalink2, "Create Short Link", "");
+                Uteis.VerificarItem(txtPermalink2, "Create Short Link", "");
 
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
     }
 
         public void AcessarPermalink()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
                 //_driver.FindElement(By.LinkText("Create Permalink")).Click();
-                Maps.ClicarBotao(ltPermalink,"Create Permalink"); 
+                Uteis.ClicarBotao(ltPermalink,"Create Permalink"); 
 
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
 
         }
 
@@ -384,22 +359,17 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public void FiltrarSemRetorno()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfSearch, "*", "*");
-                Maps.ClicarBotao(btFilter,"");
+          
+                Uteis.PreencherCampo(tfSearch, "*", "*");
+                Uteis.ClicarBotao(btFilter,"");
                 
-                Maps.VerificarItem(bugList, "Viewing Issues (0 - 0 / 0)", "");
+                Uteis.VerificarItem(bugList, "Viewing Issues (0 - 0 / 0)", "");
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
 
         }
 

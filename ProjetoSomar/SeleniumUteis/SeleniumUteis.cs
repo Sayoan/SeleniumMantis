@@ -1,33 +1,167 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
+using SeleniumMantis.SeleniumComum;
+using SeleniumWebDriver.Basics;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumWebDriver.Basics.SeleniumUteis
+namespace ProjetoSomar.SeleniumUteis
 {
-    class SeleniumUteis
+    class SeleniumUteis : WebDriver
     {
 
-        public static String getPathSeleniumDriver()
+        public SeleniumUteis() 
         {
-            // Função para definir o path do diretório
-            String strAppDir = Path.GetDirectoryName(
-            Assembly.GetExecutingAssembly().GetName().CodeBase).Substring(6);
-            //Função para reduzir em duas camadas a arvore do path
-            var gparent = Directory.GetParent(Directory.GetParent(strAppDir).ToString());
-            //Conversão var -> String
-            String aux = gparent.ToString();
 
-            //Concatenar Path diretorio + Path Drivers
-            String strAppFolderData = ("C:\\chromedriver");
-           
+            PageFactory.InitElements(DriverFactory.INSTANCE, this);
 
-            return strAppFolderData; //+ strAppFolderData;
+        }
+        public void ClicarBotao(IWebElement iwebelement, String label)
+        {
+            try
+            {
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+                iwebelement.Click();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+
         }
 
+        public void ClicarBotao(IWebElement iwebelement)
+        {
+            try
+            {
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(10));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+                iwebelement.Click();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+
+        }
+
+       
+
+        public void PreencherCampo(IWebElement iwebelement, String label, String text)
+        {
+            try
+            {
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+                iwebelement.Clear();
+                iwebelement.SendKeys(text);
+                
+            }
+            catch(Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+
+
+        }
+        public void CBClick(IWebElement iwebelement, String label, String text)
+        {
+            try
+            {
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+               
+               
+                iwebelement.Click();
+                new SelectElement(iwebelement).SelectByText(text);
+                iwebelement.Click();
+              
+
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+
+
+        }
+
+        public void CBClick_ElementoAusente(IWebElement iwebelement, String label, String text)
+        {
+            
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+
+
+
+                SelectElement selectList = new SelectElement(iwebelement);
+                IList<IWebElement> options = selectList.Options;
+                int aux = options.Count;
+
+
+                for (int i = 0; i < aux; i++)
+                {
+
+
+                    if (options[i].Text.Trim().Equals(text))
+                    {
+
+                        Assert.Fail();
+                        break;
+                    }
+
+                }
+            
+          
+
+
+        }
+
+
+        public void VerificarItem(IWebElement iwebelement, string text, string label)
+        {
+            try
+            {
+                WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
+                espera.Until(ExpectedConditions.ElementToBeClickable(iwebelement));
+                NUnit.Framework.Assert.AreEqual(text, iwebelement.Text);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+        }
+
+        public void PegarValor(IWebElement iwebelement, string label)
+        {
+            try
+            {
+                NUnit.Framework.Assert.AreEqual(label, iwebelement.Text);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+        }
+
+        public void LimparCampo(IWebElement iwebelement)
+        {
+            try
+            {
+                iwebelement.Clear();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+            }
+        }
 
 
     }

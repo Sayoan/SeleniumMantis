@@ -48,40 +48,27 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtLostPassword, "Password Reset", "");
+         
+                Uteis.VerificarItem(txtLostPassword, "Password Reset", "");
 
-
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
         }
 
         public void InserirUserName_Email(String Email, String Username)
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfUsername, "", Username);
-                Maps.PreencherCampo(tfEmail, "", Email);
-                Maps.ClicarBotao(btSubmit,"");
+           
+                Uteis.PreencherCampo(tfUsername, "", Username);
+                Uteis.PreencherCampo(tfEmail, "", Email);
+                Uteis.ClicarBotao(btSubmit,"");
 
 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
         }
 
        
@@ -90,19 +77,14 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtFalha1, "Invalid e-mail address.","");
+            
+                Uteis.VerificarItem(txtFalha1, "Invalid e-mail address.","");
 
 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
+            
         }
 
 
@@ -110,38 +92,27 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtFalha2, "The provided information does not match any registered account!", "");
+           
+                Uteis.VerificarItem(txtFalha2, "The provided information does not match any registered account!", "");
 
 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
         }
 
         public void VerificarEmailEnviado()
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtEmailEnviado, "Password Message Sent", "");
+         
+                Uteis.VerificarItem(txtEmailEnviado, "Password Message Sent", "");
 
 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
+           
         }
 
 
@@ -149,20 +120,12 @@ namespace ProjetoSomar.SeleniumPageObjects
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(btLogin);
+          
+                Uteis.ClicarBotao(btLogin);
 
-
-
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
         }
 
 

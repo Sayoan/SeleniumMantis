@@ -48,103 +48,77 @@ namespace ProjetoSomar.SeleniumPageObjects
         
         public void VerificarAccessoAbaManage()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(ltManageVerifica,"Manage Projects","");
+          
+                Uteis.VerificarItem(ltManageVerifica,"Manage Projects","");
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
 
         }
         public void InserirSenha()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfPassword, "", LoginPageObjects.username);
-                Maps.ClicarBotao(btConfirmPassword);
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
+                Uteis.PreencherCampo(tfPassword, "", LoginPageObjects.username);
+                Uteis.ClicarBotao(btConfirmPassword);
+          
 
 
         }
         public void AcessarManageProjects()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(ltManageVerifica);
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
+                Uteis.ClicarBotao(ltManageVerifica);
+            
 
 
         }
 
         public void InserirCategoriaVazia(String categoria)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfCategory, "", categoria);
-                Maps.ClicarBotao(btAddCategory);
-                Maps.VerificarItem(txtErroCategory, "A necessary field \"Category\" was empty. Please recheck your inputs.", "");
+           
+                Uteis.PreencherCampo(tfCategory, "", categoria);
+                Uteis.ClicarBotao(btAddCategory);
+                Uteis.VerificarItem(txtErroCategory, "A necessary field \"Category\" was empty. Please recheck your inputs.", "");
                 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+          
 
 
         }
 
         public void InserirCategoriaDuplicada(String categoria)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfCategory, "", categoria);
-                Maps.ClicarBotao(btAddCategory);
+          
+                Uteis.PreencherCampo(tfCategory, "", categoria);
+                Uteis.ClicarBotao(btAddCategory);
 
 
-                Maps.PreencherCampo(tfCategory, "", categoria); //inserindo a recem inserida
-                Maps.ClicarBotao(btAddCategory);
+                Uteis.PreencherCampo(tfCategory, "", categoria); //inserindo a recem inserida
+                Uteis.ClicarBotao(btAddCategory);
 
 
 
-                Maps.VerificarItem(txtErroCategory, "A category with that name already exists.", "");
+                Uteis.VerificarItem(txtErroCategory, "A category with that name already exists.", "");
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+         
 
 
         }
@@ -152,20 +126,15 @@ namespace ProjetoSomar.SeleniumPageObjects
 
         public void InserirCategoria_Duplicada(String categoria)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfCategory, "", categoria);
-                Maps.ClicarBotao(btAddCategory);
-                Maps.VerificarItem(txtErroDuplicado, "A category with that name already exists.", "");
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
+                Uteis.PreencherCampo(tfCategory, "", categoria);
+                Uteis.ClicarBotao(btAddCategory);
+                Uteis.VerificarItem(txtErroDuplicado, "A category with that name already exists.", "");
+           
 
 
         }

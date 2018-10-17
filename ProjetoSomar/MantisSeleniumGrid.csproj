@@ -101,8 +101,8 @@
     <Compile Include="SeleniumTests\ManageTests.cs" />
     <Compile Include="SeleniumTests\MyAccountTests.cs" />
     <Compile Include="SeleniumTests\ViewIssuesTests.cs" />
-    <Compile Include="SeleniumUteis\SeleniumMaps.cs" />
     <Compile Include="SeleniumUteis\SeleniumUteis.cs" />
+    <Compile Include="SeleniumUteis\SeleniumPath.cs" />
     <Compile Include="SeleniumComum\WebDriver.cs" />
   </ItemGroup>
   <ItemGroup>

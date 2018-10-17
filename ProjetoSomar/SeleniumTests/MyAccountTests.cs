@@ -210,7 +210,7 @@ namespace ProjetoSomar.SeleniumTests
             HomePageObjects homePageObjects = new HomePageObjects();
             LoginPageObjects loginPageObjects = new LoginPageObjects();
             MyAccountPageObjects myAccountPageObjects = new MyAccountPageObjects();
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             loginPageObjects.Login();
 
@@ -248,7 +248,7 @@ namespace ProjetoSomar.SeleniumTests
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
 
             MyAccountPageObjects myAccountPageObjects = new MyAccountPageObjects();
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             loginPageObjects.Login();
 
@@ -291,7 +291,7 @@ namespace ProjetoSomar.SeleniumTests
             ReportIssuesPageObjects reportIssuesPageObjects = new ReportIssuesPageObjects();
 
             MyAccountPageObjects myAccountPageObjects = new MyAccountPageObjects();
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
 
             loginPageObjects.Login();
 

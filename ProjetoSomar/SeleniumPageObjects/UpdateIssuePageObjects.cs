@@ -71,25 +71,14 @@ namespace ProjetoSomar.SeleniumPageObjects
             
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.CBClick(cbStatus, "", status); 
+           
+                Uteis.CBClick(cbStatus, "", status); 
                
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
 
 
         }
@@ -101,25 +90,17 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
+          
+                //Uteis.CBClick(cbStatus, "status", status); 
                 //revisar funcao do combobox
-                Maps.CBClick(cbPriority, "", status);
+                Uteis.CBClick(cbPriority, "", status);
 
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
+            
 
 
         }
@@ -131,25 +112,15 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.VerificarItem(txtPriority, status, "");
+         
+                Uteis.VerificarItem(txtPriority, status, "");
 
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
+         
 
 
         }
@@ -159,25 +130,14 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.VerificarItem(tfAssign, status, "");
+            
+                Uteis.VerificarItem(tfAssign, status, "");
 
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
 
 
         }
@@ -186,25 +146,14 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.CBClick(cbResolution, "", resolution);
+         
+                Uteis.CBClick(cbResolution, "", resolution);
 
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
 
 
 
@@ -216,26 +165,10 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                //Maps.VerificarItem();
-                
-
-
-
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
+           
         }
 
 
@@ -244,52 +177,30 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
 
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.PreencherCampo(tfBugNote, "", nota);
+            
+                Uteis.PreencherCampo(tfBugNote, "", nota);
 
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
+           
         }
             public void AlterarReprodutibilidade(String reprodutibilidade)
             {
 
 
                 WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-                SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
                 String ID = "";
 
-                try
-                {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.CBClick(cbReproducibility, "", reprodutibilidade);
+                
+                Uteis.CBClick(cbReproducibility, "", reprodutibilidade);
 
 
 
-                }
-                catch (Exception e)
-                {
-
-
-
-
-                }
-
-
+              
 
 
             }
@@ -299,25 +210,14 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             String ID = "";
-
-            try
-            {
-                //Maps.CBClick(cbStatus, "status", status); 
-                //revisar funcao do combobox
-                Maps.CBClick(cbAssign, "" , usuario);
+            
+                Uteis.CBClick(cbAssign, "" , usuario);
 
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
+            
 
 
 
@@ -330,22 +230,13 @@ namespace ProjetoSomar.SeleniumPageObjects
 
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             
-
-            try
-            {
-                Maps.ClicarBotao(btUpdate,"");
+            
+                Uteis.ClicarBotao(btUpdate,"");
                
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
+           
 
 
         }
@@ -353,9 +244,9 @@ namespace ProjetoSomar.SeleniumPageObjects
         public void VerificaStatus(String status)
         {
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             
-            Maps.VerificarItem(txtStatus, status, "");
+            Uteis.VerificarItem(txtStatus, status, "");
 
 
         }

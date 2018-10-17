@@ -88,52 +88,41 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public string InserirProfile_Validar()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             GerarRandom gerarRandom = new GerarRandom();
             String conteudo = gerarRandom.RandomString();
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
                 // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.PreencherCampo(tfPlataform, "", conteudo);
-                Maps.PreencherCampo(tfOs, "", conteudo);
-                Maps.PreencherCampo(tfOsBuild, "", conteudo); 
+                Uteis.PreencherCampo(tfPlataform, "", conteudo);
+                Uteis.PreencherCampo(tfOs, "", conteudo);
+                Uteis.PreencherCampo(tfOsBuild, "", conteudo); 
                 
 
-             }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
             return conteudo;
         }
 
         public String EditarProfile()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             GerarRandom gerarRandom = new GerarRandom();
             String conteudo = gerarRandom.RandomString();
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
                 // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.ClicarBotao(rBEdit);
-                Maps.ClicarBotao(btSubmit);
+                Uteis.ClicarBotao(rBEdit);
+                Uteis.ClicarBotao(btSubmit);
 
-                Maps.PreencherCampo(tfPlataform, "", conteudo);
-                Maps.PreencherCampo(tfOs, "", conteudo);
-                Maps.PreencherCampo(tfOsBuild, "", conteudo);
+                Uteis.PreencherCampo(tfPlataform, "", conteudo);
+                Uteis.PreencherCampo(tfOs, "", conteudo);
+                Uteis.PreencherCampo(tfOsBuild, "", conteudo);
 
-                Maps.ClicarBotao(btUpdateProfileEdicao);
+                Uteis.ClicarBotao(btUpdateProfileEdicao);
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
 
             return conteudo;
           
@@ -141,25 +130,19 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public String MakeDefault()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             GerarRandom gerarRandom = new GerarRandom();
             String conteudo = gerarRandom.RandomString();
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
                 // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                //Maps.ClicarBotao(rBMakeDefault);
+                //Uteis.ClicarBotao(rBMakeDefault);
                 DriverFactory.INSTANCE.FindElement(By.XPath("(//input[@name='action'])[3]")).Click();
                 
-                Maps.ClicarBotao(btSubmit);
+                Uteis.ClicarBotao(btSubmit);
 
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
             return conteudo;
 
@@ -167,51 +150,38 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public void VerificarInsercao(String conteudo)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
-            //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+          
                 // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.CBClick(cbProfile, "", conteudo);
+                Uteis.CBClick(cbProfile, "", conteudo);
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
 
         }
 
         public void Excluir()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(rBDelete);
-                Maps.ClicarBotao(btSubmit);
+          
+                Uteis.ClicarBotao(rBDelete);
+                Uteis.ClicarBotao(btSubmit);
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
 
         }
 
         public void VerificarExclusao(String conteudo)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-             Maps.CBClick_ElementoAusente(cbProfile, "", conteudo);
+             Uteis.CBClick_ElementoAusente(cbProfile, "", conteudo);
 
            
 
@@ -220,59 +190,41 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public void VerificarAcessoAbaMyAccount()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-               Maps.VerificarItem(editAccount, "Edit Account", "");
+
+            Uteis.VerificarItem(editAccount, "Edit Account", "");
                 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+         
 
 
         }
 
         public void AcessarPreferences()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-               Maps.ClicarBotao(ltPreferences);
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
+               Uteis.ClicarBotao(ltPreferences);
+           
 
 
         }
 
         public void VerificaAcessoPreferences()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-              Maps.ClicarBotao(cbProject);
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
+              Uteis.ClicarBotao(cbProject);
+            
+            
 
 
         }
@@ -280,40 +232,26 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public void AcessarManageColumns()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-               Maps.ClicarBotao(ltManage);
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+          
+               Uteis.ClicarBotao(ltManage);
+           
 
 
         }
 
         public void VerificaAcessoManageColumns()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-               Maps.ClicarBotao(btUpdate);
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
+               Uteis.ClicarBotao(btUpdate);
+           
 
 
         }
@@ -322,42 +260,28 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public void AcessarProfiles()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+            
                 // Assert.AreEqual("Edit Account", _driver.FindElement(By.XPath("//form/table/tbody/tr/td")).Text);
-                Maps.ClicarBotao(ltProfiles);
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.ClicarBotao(ltProfiles);
+           
 
 
         }
 
         public void VerificaAcessoProfiles()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtAddProfile, "Add Profile", "");
+           
+                Uteis.VerificarItem(txtAddProfile, "Add Profile", "");
                 
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
 
                       
         }
@@ -365,104 +289,69 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public void VerificaCampoObrigatorioPlatform()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtFalhaPlatform, "A necessary field \"Platform\" was empty. Please recheck your inputs.", "");
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+          
+                Uteis.VerificarItem(txtFalhaPlatform, "A necessary field \"Platform\" was empty. Please recheck your inputs.", "");
+           
 
             
         }
 
         public void VerificaCampoObrigatorioOs()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtFalhaPlatform, "A necessary field \"Operating System\" was empty. Please recheck your inputs.", "");
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
+                Uteis.VerificarItem(txtFalhaPlatform, "A necessary field \"Operating System\" was empty. Please recheck your inputs.", "");
+          
 
 
         }
 
         public void VerificaCampoObrigatorioOsBuild()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.VerificarItem(txtFalhaPlatform, "A necessary field \"Version\" was empty. Please recheck your inputs.", "");
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+          
+                Uteis.VerificarItem(txtFalhaPlatform, "A necessary field \"Version\" was empty. Please recheck your inputs.", "");
+           
 
 
         }
 
         public void BotaoSubmeter()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
 
-                Maps.ClicarBotao(btUpdateProfile);
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.ClicarBotao(btUpdateProfile);
+           
 
             //"A necessary field \"Platform\" was empty. Please recheck your inputs."
         }
 
         public void PreencheParametros1()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+          
 
-                Maps.PreencherCampo(tfPlataform, "", "");
-                Maps.PreencherCampo(tfOs, "", "");
-                Maps.PreencherCampo(tfOsBuild, "", "");
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.PreencherCampo(tfPlataform, "", "");
+                Uteis.PreencherCampo(tfOs, "", "");
+                Uteis.PreencherCampo(tfOsBuild, "", "");
+           
 
             //"A necessary field \"Platform\" was empty. Please recheck your inputs."
         }
@@ -471,45 +360,31 @@ namespace ProjetoSomar.SeleniumPageObjects{
 
         public void PreencheParametros2()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+            
 
-                Maps.PreencherCampo(tfPlataform, "", "A");
-                Maps.PreencherCampo(tfOs, "", "");
-                Maps.PreencherCampo(tfOsBuild, "", "");
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.PreencherCampo(tfPlataform, "", "A");
+                Uteis.PreencherCampo(tfOs, "", "");
+                Uteis.PreencherCampo(tfOsBuild, "", "");
+            
 
             //"A necessary field \"Platform\" was empty. Please recheck your inputs."
         }
         public void PreencheParametros3()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+            
 
-                Maps.PreencherCampo(tfPlataform, "", "A");
-                Maps.PreencherCampo(tfOs, "", "A");
-                Maps.PreencherCampo(tfOsBuild, "", "");
-            }
-
-
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.PreencherCampo(tfPlataform, "", "A");
+                Uteis.PreencherCampo(tfOs, "", "A");
+                Uteis.PreencherCampo(tfOsBuild, "", "");
+          
 
             //"A necessary field \"Platform\" was empty. Please recheck your inputs."
         }

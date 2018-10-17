@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ProjetoSomar.SeleniumComum;
 using ProjetoSomar.SeleniumPageObjects;
 using ProjetoSomar.SeleniumUteis;
@@ -76,7 +75,7 @@ namespace ProjetoSomar.SeleniumTests
             homePageObjects.VerificarAcessaLogin();
             homePageObjects.EscolherProjeto(ConfigurationManager.AppSettings["Projeto"].ToString());
             homePageObjects.VerificaProjeto();
-            NUnit.Framework.Assert.Pass();
+            //Assert.IsTrue("","");
 
         }
 

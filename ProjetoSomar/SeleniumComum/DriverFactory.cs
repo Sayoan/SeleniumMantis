@@ -30,7 +30,9 @@ namespace SeleniumMantis.SeleniumComum
                 switch (local)
                 {
                     case ("true"): //rodar local
-                        INSTANCE = new ChromeDriver(SeleniumUteis.getPathSeleniumDriver());
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        chromeOptions.AddArguments("headless");
+                        INSTANCE = new ChromeDriver(SeleniumPatch.getPathSeleniumDriver(), chromeOptions);
                         //Criei um método que retorna o path do driver: SeleniumUteis.SeleniumUteis.getPathSeleniumDriver
 
                         break;

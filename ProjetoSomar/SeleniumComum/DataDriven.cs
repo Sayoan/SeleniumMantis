@@ -19,7 +19,7 @@ namespace SeleniumMantis.SeleniumComum
             string[] split = { "" };
                 
                       
-            using (var fs = File.OpenRead(@getPatchCSV()))
+            using (var fs = File.OpenRead(@getPathCSV()))
             using (var sr = new StreamReader(fs))
             {
                 string line = string.Empty;
@@ -57,15 +57,15 @@ namespace SeleniumMantis.SeleniumComum
             return testCases;
         }
 
-        public static string getPatchCSV()
+        public static string getPathCSV()
         {
             //qq rola, pegando o patch do projeto vem junto "file:/" + "resto do patch"
-            String patch = (Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase))) + @"\input_date.csv");
+            String path = (Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase))) + @"\input_date.csv");
             //retirando lixo file:\
-            patch = patch.Remove(0, 6);
+            path = path.Remove(0, 6);
             //arquivo csv tem que estar dentro da pasta raiz do projeto!
 
-            return patch;
+            return path;
         }
 
 

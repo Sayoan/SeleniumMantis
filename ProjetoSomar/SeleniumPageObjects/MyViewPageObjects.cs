@@ -27,20 +27,14 @@ namespace ProjetoSomar.SeleniumPageObjects
 
          public void VerificaAcessoMyView()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis.SeleniumUteis Uteis = new SeleniumUteis.SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
             //espera.Until(ExpectedConditions.ElementToBeClickable(ltCategory));
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                //Assert.AreEqual("Assigned to Me (Unresolved)", _driver.FindElement(By.LinkText("Assigned to Me (Unresolved)")).Text);
-                Maps.VerificarItem(ltUnsolved, "Unassigned", "");
+            //Assert.AreEqual("Assigned to Me (Unresolved)", _driver.FindElement(By.LinkText("Assigned to Me (Unresolved)")).Text);
+                Uteis.VerificarItem(ltUnsolved, "Unassigned", "");
                
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
         }
     }
 }

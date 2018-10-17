@@ -71,130 +71,95 @@ namespace Test
 
         public void VerificaProjeto()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.CBClick(cbProjeto, "", ConfigurationManager.AppSettings["Projeto"].ToString());
+           
+                Uteis.CBClick(cbProjeto, "", ConfigurationManager.AppSettings["Projeto"].ToString());
              
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
+           
 
         }
 
         public void EscolherProjeto(String projeto)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.CBClick(cbProjeto, "project_id", projeto);
+           
+                Uteis.CBClick(cbProjeto, "project_id", projeto);
                 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
 
         }
 
         public void AcessarAbaReportIssue()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(ltIssue, "Report Issue");
+           
+                Uteis.ClicarBotao(ltIssue, "Report Issue");
                
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+            
 
         }
 
         public void AcessarAbaSummary()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(ltSummary, "Summary");
+           
+                Uteis.ClicarBotao(ltSummary, "Summary");
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
-
+            
         }
 
         public void VerificarAcessaLogin()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
            
-                Maps.VerificarItem(ltMyView, "My View", "");
            
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.VerificarItem(ltMyView, "My View", "");
+           
+            
+            
 
         }
 
         public void AcessarAbaViewIssue()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(ltViewIssues, "View Issue");
+            
+                Uteis.ClicarBotao(ltViewIssues, "View Issue");
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
         }
 
 
         public void AcessarAbaManage()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.ClicarBotao(ltManage, "Manage");
+           
+                Uteis.ClicarBotao(ltManage, "Manage");
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
 
         }
 
@@ -204,55 +169,39 @@ namespace Test
 
         public void AcessarAbaMyView()
             {
-                SeleniumMaps Maps = new SeleniumMaps();
-                try
-                {
-                  Maps.ClicarBotao(ltMyView, "My View");
+                SeleniumUteis Uteis = new SeleniumUteis();
+               
+                  Uteis.ClicarBotao(ltMyView, "My View");
 
-                }
-                catch (Exception e)
-                {
-
-                }
+                
             }
 
         public void AcessarAbaMyAccount()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
-            try
-            {
-                Maps.ClicarBotao(ltMyAccount, "My Account");
+            SeleniumUteis Uteis = new SeleniumUteis();
+            
+                Uteis.ClicarBotao(ltMyAccount, "My Account");
 
-            }
-            catch (Exception e)
-            {
-
-            }
+           
         }
 
         public void ProcurarIssue_Vazia()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
-            try
-            {
-                
-                Maps.LimparCampo(tfBugId);
-                Maps.ClicarBotao(btJump);
+            SeleniumUteis Uteis = new SeleniumUteis();
+            
+                Uteis.LimparCampo(tfBugId);
+                Uteis.ClicarBotao(btJump);
           
-            }
-            catch (Exception e)
-            {
-
-            }
+           
         }
 
         public void Verifica_IssueVazia()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
           
           
 
-                Maps.VerificarItem(tfErro, "A number was expected for bug_id.", "");
+                Uteis.VerificarItem(tfErro, "A number was expected for bug_id.", "");
                
            
         }
@@ -260,47 +209,32 @@ namespace Test
 
         public void ProcurarIssue(string ID)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
-            try
-            {
+            SeleniumUteis Uteis = new SeleniumUteis();
+           
 
-                Maps.PreencherCampo(tfBugId, "", ID);
-                Maps.ClicarBotao(btJump);
+                Uteis.PreencherCampo(tfBugId, "", ID);
+                Uteis.ClicarBotao(btJump);
               
-            }
-            catch (Exception e)
-            {
-
-            }
+           
         }
 
         public void ValidacaoIssueInexiste(string ID)
         {
-            SeleniumMaps Maps = new SeleniumMaps();
-            try
-            {
+            SeleniumUteis Uteis = new SeleniumUteis();
+           
                 
                 String texto = "Issue " + ID + " not found.";
-                Maps.VerificarItem(tfErro, texto, "");
+                Uteis.VerificarItem(tfErro, texto, "");
                 
-            }
-            catch (Exception e)
-            {
-
-            }
+           
         }
         public void Logout()
         {
-            SeleniumMaps Maps = new SeleniumMaps();
-            try
-            {
-                Maps.ClicarBotao(ltLogout, "");
+            SeleniumUteis Uteis = new SeleniumUteis();
+          
+                Uteis.ClicarBotao(ltLogout, "");
 
-            }
-            catch (Exception e)
-            {
-
-            }
+           
         }
 
         

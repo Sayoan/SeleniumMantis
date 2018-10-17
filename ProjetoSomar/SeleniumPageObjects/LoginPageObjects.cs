@@ -55,24 +55,19 @@ namespace Test
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
            
 
 
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
             
-                Maps.PreencherCampo(tfUsername, "username", username);
-                Maps.PreencherCampo(tfPassword, "password", password);
-                Maps.ClicarBotao(btSubmit, "//input[@value='Login']");
+                Uteis.PreencherCampo(tfUsername, "username", username);
+                Uteis.PreencherCampo(tfPassword, "password", password);
+                Uteis.ClicarBotao(btSubmit, "//input[@value='Login']");
                 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
+           
         }
 
         /// <summary>
@@ -86,52 +81,41 @@ namespace Test
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             String username = "sayoan.oliveira";
             String password = "";
 
 
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfUsername, "username", username);
-                Maps.PreencherCampo(tfPassword, "password", password);
-                Maps.ClicarBotao(btSubmit, "//input[@value='Login']");
-                Maps.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
+           
+                Uteis.PreencherCampo(tfUsername, "username", username);
+                Uteis.PreencherCampo(tfPassword, "password", password);
+                Uteis.ClicarBotao(btSubmit, "//input[@value='Login']");
+                Uteis.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
                
 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
         }
 
         public void LoginVazio()
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             String username = "";
             String password = "";
 
 
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                Maps.PreencherCampo(tfUsername, "username", username);
-                Maps.PreencherCampo(tfPassword, "password", password);
-                Maps.ClicarBotao(btSubmit, "//input[@value='Login']");
-                Maps.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
+          
+                Uteis.PreencherCampo(tfUsername, "username", username);
+                Uteis.PreencherCampo(tfPassword, "password", password);
+                Uteis.ClicarBotao(btSubmit, "//input[@value='Login']");
+                Uteis.VerificarItem(txtWrongLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.", "");
 
 
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
+            
         }
 
 
@@ -140,19 +124,14 @@ namespace Test
     {
         //implementar
 
-        SeleniumMaps Maps = new SeleniumMaps();
+        SeleniumUteis Uteis = new SeleniumUteis();
         
         //método try catch para validar se foi possível acessar a tela inicial
-        try
-        {
-                Maps.ClicarBotao(ltLostPassword, "Lost your password ?");
+        
+                Uteis.ClicarBotao(ltLostPassword, "Lost your password ?");
              
 
-        }
-        catch (Exception e)
-        {
-            Assert.Fail(e.ToString());
-        }
+       
     }
 
        
@@ -161,21 +140,13 @@ namespace Test
         {
             //implementar
 
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
-                
-                Maps.VerificarItem(txtUsername, "Username", "");
-                Maps.VerificarItem(txtPassword, "Password", "");
+                           
+                Uteis.VerificarItem(txtUsername, "Username", "");
+                Uteis.VerificarItem(txtPassword, "Password", "");
 
-
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.ToString());
-            }
         }
 
     }

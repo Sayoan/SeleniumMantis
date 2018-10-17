@@ -107,41 +107,31 @@ namespace Test
         {
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             HomePageObjects homePageObjects = new HomePageObjects();
             //veriricar espera
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+            
                 //NUnit.Framework.Assert.AreEqual("Report Issue", _driver.FindElement(By.LinkText("Report Issue")).Text);
-                Maps.VerificarItem(homePageObjects.ltReportIssue, "Report Issue", "");
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+                Uteis.VerificarItem(homePageObjects.ltReportIssue, "Report Issue", "");
+            
 
         }
         public void VerificarDefaultProfile(String conteudo)
         {
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             HomePageObjects homePageObjects = new HomePageObjects();
             //veriricar espera
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+            
                 
-                Maps.CBClick(cbProfile, "", conteudo);
+                Uteis.CBClick(cbProfile, "", conteudo);
                 Thread.Sleep(3000);
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
+           
 
         }
 
@@ -149,23 +139,17 @@ namespace Test
         {
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(5));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             //veriricar espera
 
             //método try catch para validar se foi possível acessar a tela inicial
-            try
-            {
+           
                 btSubmit.Click();
-                Maps.VerificarItem(txtError, "APPLICATION ERROR #11", "");
-                Maps.VerificarItem(ltReportIssue, "Report Issue", "");
+                Uteis.VerificarItem(txtError, "APPLICATION ERROR #11", "");
+                Uteis.VerificarItem(ltReportIssue, "Report Issue", "");
                 
 
 
-            }
-            catch (Exception e)
-            {
-                NUnit.Framework.Assert.Fail(e.ToString());
-            }
 
         }
 
@@ -178,22 +162,22 @@ namespace Test
         public void InserirTarefa()
         {
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
 
 
-            Maps.CBClick(cbCategory, "category_id", "[All Projects] app_14");
-            Maps.CBClick(cbReproducibility, "reproducibility", "always");
-            Maps.CBClick(cbSeverity, "severity", "feature");
-            Maps.CBClick(cbSeverity, "priority", "none");
-            Maps.CBClick(cbSeverity, "profile_id", "Desktop Windows 10");
-            Maps.PreencherCampo(tfPlatform, "platform", "teste1");
-            Maps.PreencherCampo(tfOs, "os", "teste2");
-            Maps.PreencherCampo(tfOs_Build, "os_build", "teste3");
-            Maps.CBClick(cbHandler, "handler_id", "administrator");
-            Maps.PreencherCampo(tfSummary, "summary", "TESTE_SUMMARY");
-            Maps.PreencherCampo(tfdDescription, "description", "teste4");
-            Maps.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
-            Maps.PreencherCampo(tfAdditional, "additional_info", "teste4");
+            Uteis.CBClick(cbCategory, "category_id", "[All Projects] app_14");
+            Uteis.CBClick(cbReproducibility, "reproducibility", "always");
+            Uteis.CBClick(cbSeverity, "severity", "feature");
+            Uteis.CBClick(cbSeverity, "priority", "none");
+            Uteis.CBClick(cbSeverity, "profile_id", "Desktop Windows 10");
+            Uteis.PreencherCampo(tfPlatform, "platform", "teste1");
+            Uteis.PreencherCampo(tfOs, "os", "teste2");
+            Uteis.PreencherCampo(tfOs_Build, "os_build", "teste3");
+            Uteis.CBClick(cbHandler, "handler_id", "administrator");
+            Uteis.PreencherCampo(tfSummary, "summary", "TESTE_SUMMARY");
+            Uteis.PreencherCampo(tfdDescription, "description", "teste4");
+            Uteis.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
+            Uteis.PreencherCampo(tfAdditional, "additional_info", "teste4");
 
 
 
@@ -208,24 +192,24 @@ namespace Test
         public String InserirTarefa_RetornoSummary()
         {
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             GerarRandom gerarRandom = new GerarRandom();
             String summary = gerarRandom.RandomString();
 
 
-            Maps.CBClick(cbCategory, "category_id", "[All Projects] app_14");
-            Maps.CBClick(cbReproducibility, "reproducibility", "N/A");
-            Maps.CBClick(cbPriority, "priority", "none");
+            Uteis.CBClick(cbCategory, "category_id", "[All Projects] app_14");
+            Uteis.CBClick(cbReproducibility, "reproducibility", "N/A");
+            Uteis.CBClick(cbPriority, "priority", "none");
 
-            Maps.PreencherCampo(tfPlatform, "platform", "teste1");
-            Maps.PreencherCampo(tfOs, "os", "teste2");
-            Maps.PreencherCampo(tfOs_Build, "os_build", "teste3");
-            Maps.CBClick(cbHandler, "handler_id", "administrator");
-            Maps.PreencherCampo(tfSummary, "summary", summary);
-            Maps.PreencherCampo(tfdDescription, "description", "teste4");
-            Maps.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
-            Maps.PreencherCampo(tfAdditional, "additional_info", "teste4");
-            Maps.ClicarBotao(btSubmit);
+            Uteis.PreencherCampo(tfPlatform, "platform", "teste1");
+            Uteis.PreencherCampo(tfOs, "os", "teste2");
+            Uteis.PreencherCampo(tfOs_Build, "os_build", "teste3");
+            Uteis.CBClick(cbHandler, "handler_id", "administrator");
+            Uteis.PreencherCampo(tfSummary, "summary", summary);
+            Uteis.PreencherCampo(tfdDescription, "description", "teste4");
+            Uteis.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
+            Uteis.PreencherCampo(tfAdditional, "additional_info", "teste4");
+            Uteis.ClicarBotao(btSubmit);
             
 
             return summary;
@@ -234,27 +218,27 @@ namespace Test
         public void InserirIssue_Simple(string category, string reproducibility, string severity, string priority, string summary, string description)
         {
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
 
             
 
             //dinamico
-            Maps.CBClick(cbCategory, "category_id", category);
-            Maps.CBClick(cbReproducibility, "reproducibility", reproducibility);
-            Maps.CBClick(cbSeverity, "severity", severity);
-            Maps.CBClick(cbPriority, "priority", priority);
-            Maps.PreencherCampo(tfSummary, "summary", summary);
-            Maps.PreencherCampo(tfdDescription, "description", description);
+            Uteis.CBClick(cbCategory, "category_id", category);
+            Uteis.CBClick(cbReproducibility, "reproducibility", reproducibility);
+            Uteis.CBClick(cbSeverity, "severity", severity);
+            Uteis.CBClick(cbPriority, "priority", priority);
+            Uteis.PreencherCampo(tfSummary, "summary", summary);
+            Uteis.PreencherCampo(tfdDescription, "description", description);
 
             //estático
             
-            Maps.CBClick(cbProfile, "profile_id", "Desktop Windows 10");
-            Maps.PreencherCampo(tfPlatform, "platform", "teste1");
-            Maps.PreencherCampo(tfOs, "os", "teste2");
-            Maps.PreencherCampo(tfOs_Build, "os_build", "teste3");
-            Maps.CBClick(cbHandler, "handler_id", "administrator");
-            Maps.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
-            Maps.PreencherCampo(tfAdditional, "additional_info", "teste4");
+            Uteis.CBClick(cbProfile, "profile_id", "Desktop Windows 10");
+            Uteis.PreencherCampo(tfPlatform, "platform", "teste1");
+            Uteis.PreencherCampo(tfOs, "os", "teste2");
+            Uteis.PreencherCampo(tfOs_Build, "os_build", "teste3");
+            Uteis.CBClick(cbHandler, "handler_id", "administrator");
+            Uteis.PreencherCampo(tfSteps, "steps_to_reproduce", "teste4");
+            Uteis.PreencherCampo(tfAdditional, "additional_info", "teste4");
 
 
             DriverFactory.INSTANCE.FindElement(By.XPath("(//input[@name='view_state'])[2]")).Click();
@@ -272,31 +256,21 @@ namespace Test
             //Após inserir uma issue aparece uma tela rapidamente informando o ID da issue
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             String ID = "";
 
-            try
-            {
 
-                Maps.ClicarBotao(LtViewIssues, "");
-                Maps.LimparCampo(tfSearch);
-                Maps.PreencherCampo(tfSearch, "", summary);
-                Maps.ClicarBotao(btFilter, "");
-                Maps.ClicarBotao(btPicFilter, "");
+                Uteis.ClicarBotao(LtViewIssues, "");
+                Uteis.LimparCampo(tfSearch);
+                Uteis.PreencherCampo(tfSearch, "", summary);
+                Uteis.ClicarBotao(btFilter, "");
+                Uteis.ClicarBotao(btPicFilter, "");
 
 
                 String URL = DriverFactory.INSTANCE.Url; //pegar a URL 
                 ID = URL.Substring(URL.Length - 4); //tratamento da URL que contem o ID
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
 
 
 
@@ -312,27 +286,17 @@ namespace Test
             //Após inserir uma issue aparece uma tela rapidamente informando o ID da issue
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             String ID = "";
 
-            try
-            {
 
-                Maps.ClicarBotao(LtViewIssues, "");
-                Maps.LimparCampo(tfSearch);
-                Maps.PreencherCampo(tfSearch, "", summary);
-                Maps.ClicarBotao(btFilter, "");
-                Maps.ClicarBotao(btPicFilter, "");
+                Uteis.ClicarBotao(LtViewIssues, "");
+                Uteis.LimparCampo(tfSearch);
+                Uteis.PreencherCampo(tfSearch, "", summary);
+                Uteis.ClicarBotao(btFilter, "");
+                Uteis.ClicarBotao(btPicFilter, "");
 
 
-            }
-            catch (Exception e)
-            {
-
-
-
-
-            }
 
 
         }
@@ -342,23 +306,14 @@ namespace Test
             //Após inserir uma issue aparece uma tela rapidamente informando o ID da issue
 
             WebDriverWait espera = new WebDriverWait(DriverFactory.INSTANCE, TimeSpan.FromSeconds(3));
-            SeleniumMaps Maps = new SeleniumMaps();
+            SeleniumUteis Uteis = new SeleniumUteis();
             String ID = "";
 
-            try
-            {
+            
 
-                Maps.ClicarBotao(btEdit,"");
-
-
-            }
-            catch (Exception e)
-            {
+                Uteis.ClicarBotao(btEdit,"");
 
 
-
-
-            }
 
 
         }
