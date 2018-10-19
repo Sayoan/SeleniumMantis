@@ -42,11 +42,11 @@
 | Classe | Função |
 | ------ | ------ |
 | Tests | Classe Mãe de todo o teste, herdando valores da WebDriver e executando as suites de testes |
-| SeleniumUteis | Classe responsável pelo patch do driver (Pode ser substituido por urls estáticas) |
+| SeleniumPath | Classe responsável pelo path do driver (Pode ser substituido por urls estáticas) |
 | WebDriver | Classe responsável por executar os métodos implementados para o WebDriver e orquestragem dos métodos do Unit|
 | DriverFactory | Cria o Driver(recebe o patch, aqui ele pode ser estático), navega para URL e amplia a tela, dentro dele é necessário escolher se será local ou através do selenium grid|
 | PageObjects | Classe responsável pelo mapeamento dos elementos da tela e seus métodos|
-| Maps | Classe responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
+| Uteis(antiga Maps) | Classe responsável por conter funções genéricas com os IWebelements(click, selecionar combobox, asserts) |
 | GerarRandom | Classe responsável por gerar conteúdo genérico |
 | DataDriven | Classe responsável por implementar o DDT |
 
